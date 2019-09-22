@@ -9,6 +9,7 @@
 |birthday|integer|null: false|
 |payment|string|null: false|
 |cregitcard|string|null: false, unique: true|
+
 ### Association
 - has_many :items
 - has_many :reviews
@@ -37,40 +38,48 @@
 
 ## index
 
-## items-tagsテーブル（中間テーブル）
+## items-categoriesテーブル（中間テーブル）
 |Column|Type|Options|
 |------|----|-------|
 |item_id|reference|null: false, foreign_key: true|
-|tag_id|reference|null: false, foreign_key: true|
+|categorie_id|reference|null: false, foreign_key: true|
 ### Association
 - belongs_to :item
 - belongs_to :tag
 
-## tagsテーブル
+## categoriesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |tag|text||
 ### Association
 - has_many :items,  through: :item-tags
 
-## reviewテーブル
-|Column|Type|Options|
-|------|----|-------|
-|saler_id|reference|foreign_key: true|
-|buyer_id|reference|foreign_key: true|
-|user_id|reference|null: false, foreign_ket: true|
-|text|string|null: false|
-### Association
-- belongs_to :item
-- belongs_to :user
-
 ## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |saler_id|reference|foreign_key: true|
 |buyer_id|reference|foreign_key: true|
-|user_id|reference|null: false, foreign_ket: true|
+|created_at|integer|null: false, foreign_ket: true|
 |body|text||
 ### Association
 - belongs_to :item
 - belongs_to :user
+
+
+## buyedテーブル（購入品）
+|Column|Type|Options|
+|------|----|-------|
+|item_id|integer|null: false|
+|buyer_id|integer|null: false|
+|user_id|integer|null: false|
+### Association
+- has_many: items
+
+## saledテーブル（出品品）
+|Column|Type|Options|
+|------|----|-------|
+|saler_id|integer|null: false|
+|user_id|integer|null: false|
+|item_id|integer|null: false|
+
+## regiontテーブル
