@@ -1,85 +1,213 @@
 # freemarket DB設計
+
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|email|string|null: false, unique: true|
-|password|string|null: false, unique: true|
 |name|string|null: false, unique: true|
-|street-address|string|null: false|
+|name_confirm|string|null: false, unique: true|
+|name_confirm_kana|string|null: false|
+|password|string|null: false, unique: true|
+|password_confirm|string|null: false, unique: true|
+|email|string|null: false, unique: true|
+|address|string|null: false|
 |birthday|integer|null: false|
-|payment|string|null: false|
-|cregitcard|string|null: false, unique: true|
+|created_at|datetime||
+|updated_at|datetime||
+|image|string||
+|payment|string||
+|selling|integer|null: false|
+|profit|integer|null: false|
+|point|integer|null: false|
 
 ### Association
 - has_many :items
-- has_many :reviews
-- has_many :messages
-## index
-- add index :users,  :name
+- has_many :goodstamps
+- has_many :statuses
+- belongs_to :news
+- belongs_to :report
+- has_one :creditcard
+
+---
 
 ## itemsテーブル
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
 |price|integer|null: false|
-|region|string|null: false|
-|state|string|null: false|
-|shippingdata|string|null: false|
-|shippingmethod|string|null: false|
-|shippingcharge|string|null: false|
-|saler_id|reference|null: false, foreign_key: true|
-|buyer_id|reference|null: false, foreign_key: true|
-|user_id|reference|null: false, foreign_ket: true|
+|category|reference|null: false|
+|state|reference|null: false|
+|size|reference|null: false|
+|brand|reference|null: false|
+|report|reference|null: false|
+|region|reference|null: false|
+|shipping_data|reference|null: false|
+|shipping_method|reference|null: false|
+|shipping_charge|reference|null: false|
+|saller|reference|null: false, foreign_key: true|
+|buyer|reference|null: false, foreign_key: true|
+|created_at|datatime||
+
 ### Association
-- has_many :tags,  through: :item-tags
-- has_many :reviews
+- has_many :goodstamps
+- has_many :images
 - belongs_to :user
-- belongs_to :message
+- belongs_to :report
+- belongs_to :brand
+- belongs_to :region
+- belongs_to :category
+- belongs_to :buyer, class_name: "User"
+- belongs_to :seller, class_name: "User"
+- belongs_to_active_hash :shipping_method
+- belongs_to_active_hash :shipping_data
+- belongs_to_active_hash :state
+- belongs_to_active_hash :size
 
-## index
-
-## items-categoriesテーブル（中間テーブル）
+---
+## categoryテーブル
 |Column|Type|Options|
 |------|----|-------|
-|item_id|reference|null: false, foreign_key: true|
-|categorie_id|reference|null: false, foreign_key: true|
+|name|String|null: false, ancestry|
+
+### Association
+- has_many :items
+
+---
+## buyerテーブル
+|Column|Type|Options|
+|------|----|-------|
+|item|reference|null: false|
+|message|reference|null: false|
+
+### Association
+- has_many :items, class_name: "User"
+- has_many :messages
+- has_many :evaluations
+- has_one :seller
+
+
+---
+## sellerテーブル
+|Column|Type|Options|
+|------|----|-------|
+|item|reference|null: false|
+|message|reference|null: false|
+
+### Association
+- has_many :items, class_name: "User"
+- has_many :messages
+- has_many :evaluations
+- has_one :seller
+
+---
+## messageテーブル
+|Column|Type|Options|
+|------|----|-------|
+|text|text||
+|buyer|reference|null: false|
+|seller|reference|null: false|
+|created_at|datatime||
+
+### Association
+- belongs_to :buyer
+- belongs_to :seller
+
+---
+## evaluationテーブル
+|Column|Type|Options|
+|------|----|-------|
+|text|text||
+|buyer|reference|null: false|
+|seller|reference|null: false|
+|status|reference|null: false|
+
+### Association
+- belongs_to :buyer
+- belongs_to :seller
+- belongs_to :status
+
+---
+## statusテーブル
+|Column|Type|Options|
+|------|----|-------|
+|evaluation|reference|null: false|
+|user|reference|null: false|
+
+### Association
+- has_many :evaluations
+- belongs_to :user
+
+---
+## reportテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user|reference|null: false|
+|item|reference|null: false|
+
+### Association
+- has_many :users
+- has_many :items
+
+---
+## goodstampテーブル
+|Column|Type|Options|
+|------|----|-------|
+|user|reference|null: false|
+|item|reference|null: false|
+
+### Association
+- belongs_to :user
+- belongs_to :item
+
+---
+## newsテーブル
+|Column|Type|Options|
+|------|----|-------|
+|notice|text||
+|user|references|null: false|
+|created_at|datatime||
+
+### Association
+- has_many :users
+
+---
+## creditcardテーブル
+|Column|Type|Options|
+|------|----|-------|
+|customer|integer|null: false|
+|card|integer|null: false|
+|user|reference|null: false|
+
+### Association
+- has_one :user
+
+---
+## imageテーブル
+|Column|Type|Options|
+|------|----|-------|
+|url|string|null: false|
+|item|reference|null: false|
+
 ### Association
 - belongs_to :item
-- belongs_to :tag
 
-## categoriesテーブル
+---
+## brandテーブル
 |Column|Type|Options|
 |------|----|-------|
-|tag|text||
+|name|string|null: false|
+|item|reference|null: false|
+
 ### Association
-- has_many :items,  through: :item-tags
+- has_many :items
 
-## messagesテーブル
+---
+## regionテーブル
 |Column|Type|Options|
 |------|----|-------|
-|saler_id|reference|foreign_key: true|
-|buyer_id|reference|foreign_key: true|
-|created_at|integer|null: false, foreign_ket: true|
-|body|text||
+|name|string|null: false|
+|item|reference|null: false|
+
 ### Association
-- belongs_to :item
-- belongs_to :user
+- has_many :items
 
 
-## buyedテーブル（購入品）
-|Column|Type|Options|
-|------|----|-------|
-|item_id|integer|null: false|
-|buyer_id|integer|null: false|
-|user_id|integer|null: false|
-### Association
-- has_many: items
-
-## saledテーブル（出品品）
-|Column|Type|Options|
-|------|----|-------|
-|saler_id|integer|null: false|
-|user_id|integer|null: false|
-|item_id|integer|null: false|
-
-## regiontテーブル
