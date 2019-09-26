@@ -27,6 +27,21 @@
 - belongs_to :news
 - belongs_to :report
 - has_one :creditcard, dependent: :destroy
+- has_one :address, dependent: :destroy
+
+---
+
+## addressテーブル
+|Column|Type|Options|
+|------|----|-------|
+|postal|string|null: false|
+|region|string|null: false|
+|city|string|null: false|
+|address|string|null: false|
+|building|string||
+
+### Association
+- belongs_to: users
 
 ---
 
