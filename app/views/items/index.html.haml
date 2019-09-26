@@ -1,0 +1,226 @@
+.wrapper
+  .header
+    .upper-header
+      .upper-header__logo
+        = image_tag 'merucari-logo.svg', alt: 'メルカリロゴ', height: "36", width: "134"
+      %input.upper-header__search{placeholder: "何かお探しですか"}
+        .upper-header__search-btn
+          = fa_icon 'search'
+    .lower-header
+      .lower-header-right
+        .lower-header-right__categori
+          = fa_icon 'list-ul', class: "lower-header-right__categori-btn"
+          カテゴリーから探す
+        .lower-header-right__bland
+          = fa_icon 'tags', class: "lower-header-right__bland-btn"
+          ブランドから探す
+      .lower-header-left
+        .lower-header-left__goodstamp
+          = fa_icon 'heart', class: "lower-header-left__goodstamp-btn"
+          いいね！一覧   
+        .lower-header-left__notice
+          = fa_icon 'bell', class: "lower-header-left__notice-btn"
+          お知らせ   
+        .lower-header-left__todo
+          = fa_icon 'check', class: "lower-header-left__check-btn"
+          やることリスト
+        .lower-header-left__mypage
+          = fa_icon 'user-circle', class: "lower-header-left__mypage-btn"
+          マイページ
+          //マイページのアイコンは、自分で選んだ画像が表示されるようにする必要あり。今は仮置き
+  .top-image__slider
+    .slider-wrapper
+      .slide-item__sumaho
+        .slide-item__sumaho__left
+          .slide-item__sumaho__left__upper
+            スマホでかんたん<br>フリマアプリ
+          %p.slide-item__sumaho__left__lower
+            メルカリはスマホカメラからすぐに出品できる<br>購入時も安心な独自システムのアプリです
+          .slide-item__sumaho__left__appstore
+            = image_tag 'app-store.svg', alt: 'appstoreのアイコン'
+          .slide-item__sumaho__left__googleplay
+            = image_tag 'googleplay', alt: 'googleplayのアイコン'
+        .slide-item__sumaho__right
+        = image_tag 'sumaho.png', alt: 'メルカリスマホ写真', height: "390"
+        %p.arrow-next
+          >
+        %p.arrow-prev 
+          <         
+      .slide-item__camp
+        = image_tag 'camp.png', alt: 'キャンプ用品', height: "390"
+        %p.arrow-next
+          >
+        %p.arrow-prev 
+          <       
+    //スライドは後回し
+
+  .item-categori
+    人気の商品一覧
+  
+  .item-images
+    .item-images__text
+      人気の商品写真
+    .item-image
+      .item-image__box
+        = image_tag 'item.jpg', alt: 'キャンプ用品', height:'188', width: '188'
+      %span.item-image__price
+        4321
+      %span.item-image__name
+        ショートコート
+    .item-image
+      .item-image__box
+        = image_tag 'item.jpg', alt: 'キャンプ用品', height:'188', width: '188'
+      %span.item-image__price
+        4321
+      %span.item-image__name
+        ショートコート
+    .item-image
+      .item-image__box
+        = image_tag 'item.jpg', alt: 'キャンプ用品', height:'188', width: '188'
+      %span.item-image__price
+        4321
+      %span.item-image__name
+        ショートコート
+    .item-image
+      .item-image__box
+        = image_tag 'item.jpg', alt: 'キャンプ用品', height:'188', width: '188'
+      %span.item-image__price
+        4321
+      %span.item-image__name
+        ショートコート
+    .item-image
+      .item-image__box
+        = image_tag 'item.jpg', alt: 'キャンプ用品', height:'188', width: '188'
+      %span.item-image__price
+        4321
+      %span.item-image__name
+        ショートコート 
+    .item-image
+      .item-image__box
+        = image_tag 'item.jpg', alt: 'キャンプ用品', height:'188', width: '188'
+      %span.item-image__price
+        4321
+      %span.item-image__name
+        ショートコート
+    .item-image
+      .item-image__box
+        = image_tag 'item.jpg', alt: 'キャンプ用品', height:'188', width: '188'
+      %span.item-image__price
+        4321
+      %span.item-image__name
+        ショートコート
+    .item-image
+      .item-image__box
+        = image_tag 'item.jpg', alt: 'キャンプ用品', height:'188', width: '188'
+      %span.item-image__price
+        4321
+      %span.item-image__name
+        ショートコート
+    .item-image
+      .item-image__box
+        = image_tag 'item.jpg', alt: 'キャンプ用品', height:'188', width: '188'
+      %span.item-image__price
+        4321
+      %span.item-image__name
+        ショートコート
+    .item-image
+      .item-image__box
+        = image_tag 'item.jpg', alt: 'キャンプ用品', height:'188', width: '188'
+      %span.item-image__price
+        4321
+      %span.item-image__name
+        ショートコート
+
+  .sell-item
+    出品
+    .sell-item__icon
+      = fa_icon 'camera', class: "sell-item__icon-btn"
+
+
+  .bottom
+    .bottom-left
+      .bottom-text
+        .bottom-text__upper
+          スマホでかんたんフリマアプリ
+        .bottom-text__lower
+          今すぐ無料ダウンロード
+      .bottom-icon
+        .bottom-icon__merucari
+          = image_tag 'merucari-cube.png', alt: 'メルカリアイコン'
+        .bottom-icon__appstore
+          = image_tag 'app-store.svg', alt: 'appstoreアイコン'
+        .bottom-icon__googleplay
+          = image_tag 'googleplay.svg', alt: 'googleplayアイコン'
+    .bottom-right
+      .bottom-right__freetag
+        = image_tag 'freetag.png', alt: 'freetagアイコン'
+      
+  .footer
+    .footer-text
+      %ul.footer-text__title
+        %h2 メルカリについて
+        %li.footer-text__list
+          会社概要
+        %li.footer-text__list
+          採用情報
+        %li.footer-text__list
+          プレスリリース
+        %li.footer-text__list
+          公式ブログ
+        %li.footer-text__list
+          メルカリロゴ利用ガイドライン
+          
+        %li.footer-text__list__icon
+          = fa_icon 'twitter'
+        %li.footer-text__list__icon
+          = fa_icon 'facebook'
+          
+
+      %ul.footer-text__title
+        %h2 メルカリガイド
+        %li.footer-text__list
+          らくらくメルカリ便
+        %li.footer-text__list
+          ゆうゆうメルカリ便
+        %li.footer-text__list
+          大型メルカリ便
+        %li.footer-text__list
+          車体取引ガイド
+        %li.footer-text__list
+          メルカリあんしん・あんぜん宣言！
+        %li.footer-text__list
+          偽ブランド品撲滅への取り組み
+        %li.footer-text__list
+          メルカリボックス
+
+      %ul.footer-text__title
+        %h2 プライバシーポリシー
+        %li.footer-text__list
+          メルカリ利用規約
+        %li.footer-text__list
+          あんしんスマホサポート制度に関する利用特約
+        %li.footer-text__list
+          コンプライアンスポリシー
+        %li.footer-text__list
+          個人データの安全管理に係る基本方針
+        %li.footer-text__list
+          特定商取引に関する表記
+        %li.footer-text__list
+          資金決済法に基づく表示
+        %li.footer-text__list
+          法令遵守と犯罪抑止の為に
+    
+      %ul.footer-text__title
+        %h2 国
+        %li.footer-text__list
+          日本
+        %li.footer-text__list
+          日本
+        %li.footer-text__list
+          united state
+      
+    %ul.footer-last
+      %li.footer-last-icon
+        メルカリ
+      %li.footer-last-text
+        Fカリ
