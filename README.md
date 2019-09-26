@@ -194,7 +194,7 @@
 |user|reference|null: false|
 
 ### Association
-- has_one :user
+- belongs_to :user
 
 ---
 ## imageテーブル
