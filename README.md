@@ -9,8 +9,7 @@
 |password|string|null: false, unique: true|
 |password_confirm|string|null: false, unique: true|
 |email|string|null: false, unique: true|
-|telephone|string|null: false, unique: true|
-|address|string|null: false|
+|phone_number|string|null: false, unique: true|
 |birthday|integer|null: false|
 |created_at|datetime||
 |updated_at|datetime||
@@ -34,6 +33,7 @@
 ## addressテーブル
 |Column|Type|Options|
 |------|----|-------|
+|user_id|integer|null: false|
 |postal|string|null: false|
 |region|string|null: false|
 |city|string|null: false|
@@ -41,7 +41,7 @@
 |building|string||
 
 ### Association
-- belongs_to: users
+- belongs_to: user
 
 ---
 
@@ -164,7 +164,7 @@
 - has_one :items
 
 ---
-## goodstampテーブル
+## likesテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user|reference|null: false|
