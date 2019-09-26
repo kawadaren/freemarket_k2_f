@@ -9,6 +9,7 @@
 |password|string|null: false, unique: true|
 |password_confirm|string|null: false, unique: true|
 |email|string|null: false, unique: true|
+|telephone|string|null: false, unique: true|
 |address|string|null: false|
 |birthday|integer|null: false|
 |created_at|datetime||
@@ -20,12 +21,12 @@
 |point|integer|null: false|
 
 ### Association
-- has_many :items
-- has_many :goodstamps
-- has_many :statuses
+- has_many :items, dependent: :destroy
+- has_many :goodstamps, dependent: :destroy
+- has_many :statuses, dependent: :destroy
 - belongs_to :news
 - belongs_to :report
-- has_one :creditcard
+- has_one :creditcard, dependent: :destroy
 
 ---
 
@@ -48,8 +49,8 @@
 |created_at|datatime||
 
 ### Association
-- has_many :goodstamps
-- has_many :images
+- has_many :goodstamps, dependent: :destroy
+- has_many :images, dependent: :destroy
 - belongs_to :user
 - belongs_to :report
 - belongs_to :brand
@@ -145,7 +146,7 @@
 
 ### Association
 - has_many :users
-- has_many :items
+- has_one :items
 
 ---
 ## goodstampテーブル
@@ -167,7 +168,7 @@
 |created_at|datatime||
 
 ### Association
-- has_many :users
+- has_many :users, dependent: :destroy
 
 ---
 ## creditcardテーブル
