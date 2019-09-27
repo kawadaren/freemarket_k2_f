@@ -4,10 +4,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false, unique: true|
-|name_confirm|string|null: false, unique: true|
-|name_confirm_kana|string|null: false|
 |password|string|null: false, unique: true|
-|password_confirm|string|null: false, unique: true|
 |email|string|null: false, unique: true|
 |phone_number|string|null: false, unique: true|
 |birthday|integer|null: false|
