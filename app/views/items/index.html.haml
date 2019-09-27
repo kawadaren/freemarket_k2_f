@@ -133,7 +133,8 @@
           ショートコート
 
   .sell-item
-    出品
+    .sell-item__text
+      出品
     .sell-item__icon
       = fa_icon 'camera', class: "sell-item__icon-btn"
 
@@ -220,9 +221,10 @@
           日本
         %li.footer-text__list
           united state
-      
-    %ul.footer-last
-      %li.footer-last-icon
-        メルカリ
-      %li.footer-last-text
-        Fカリ
+    
+    .footer-last
+      %ul.footer-last-icon
+        %li.footer-last-merucari
+          = image_tag 'merucari-logo-white', alt: 'メルカリロゴ'
+        %li.footer-last-text
+          &copy;Fカリ

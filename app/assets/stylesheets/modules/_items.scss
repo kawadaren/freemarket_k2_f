@@ -182,7 +182,13 @@
     position: fixed;
     bottom: 32px;
     right: 32px;
-    
+    &__text{
+      padding-top: 30px;
+      line-height: 10px;
+    }
+    &__icon{
+      font-size: 3em;
+    }
   }
   
   .bottom{
@@ -257,5 +263,15 @@
         }
       }
     }
-
+    &-last{
+      display: flex;
+      &-icon{
+        margin: 16px;
+      }
+      &-text{
+        font-size: 5px;
+      }
+    }
   }
+  
+  
