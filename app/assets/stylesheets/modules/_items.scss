@@ -125,11 +125,16 @@
     padding: 56px 0px 30px;
     margin: 0px;
   }
-
-  .item-images{
+  
+  .item{
+    background-color: azure;
+  
+   &-images{
     background-color: azure;
     text-align: center;
     height: 150vh;
+    width: 1200px;
+    margin: 0 9%;
     padding-bottom: 100px;
     
     &__text{
@@ -166,7 +171,7 @@
       }
     }
   }
-
+  }
   .sell-item{
     font-size: 22px;
     background-color: blue;
@@ -238,6 +243,10 @@
         font-weight: bold;
         font-size: 16px;
         margin: 16px;
+      }
+      &__middle{
+        margin-top: 42px;
+        font-size: 10px;
       }
       &__list {
         margin: 16px;
