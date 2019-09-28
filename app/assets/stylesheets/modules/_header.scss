@@ -1,11 +1,10 @@
 .header{
   min-width: 700px;
-  max-width: 1030px;
+  max-width: 1100px;
   height: 100px;
-  color: aqua;
   padding: 8px 0px 0px;
   margin: 0px auto;
-  background-color: aquamarine;
+  background-color: $white;
   
   .upper-header{
     display: flex;
@@ -20,7 +19,7 @@
       border-width: 1px;
       border-radius: 4px;
       padding: 0px 50px 0px 10px;
-      background-color: rgb(204, 204, 204);
+      background-color: rgb(245, 245, 245);
       &-btn{
         color:rgb(34, 34, 34);
         position: relative;
@@ -36,45 +35,51 @@
     display: flex;
     line-height: 36px;
     margin-top: 8px;
+    justify-content: space-between;
     &-right{
       display: flex;
-      margin-right: 160px;
       &__categori{
         font-size: $base_merucari_font;
         font-weight: bold;
         color: black;
         padding: 0px 10px;
+        &-btn{
+          color: red;
+        }
       }
       &__bland{
         font-size: $base_merucari_font;
         color: black;
         font-weight: bold;
         padding: 0px 10px;
+        &-btn{
+          color: red;
+        }
       }
     }
     &-left{
       display: flex;
+      height: 32px;
+      margin-right: 30px;
 
-      &__goodstamp{
+      &__registration{
         font-size: $base_merucari_font;
-        color: black;
+        color: $white;
+        background-color: $red;
         padding: 0px 10px;
+        border-radius: 4px;
       }
-      &__notice{
+      &__login{
         font-size: $base_merucari_font;
-        color: black;
+        color: $blue;
+        border-color: $blue;
+        border-style: solid;
         padding: 0px 10px;
+        margin-left: 11px;
+        border-radius: 4px;
+        border-width: 1px;
       }
-      &__todo{
-        font-size: $base_merucari_font;
-        color: black;
-        padding: 0px 10px;
-      }
-      &__mypage{
-        font-size: $base_merucari_font;
-        color: black;
-        padding: 0px 10px;
-      }
+      
     }
   }
 }

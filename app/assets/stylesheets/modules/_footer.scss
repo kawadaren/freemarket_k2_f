@@ -45,12 +45,12 @@
 
 
 .footer{
-  background-color: rgb(34, 34, 34);
-  color: white;
+  background-color: $black;
+  color:$white;
   justify-content: center;
   &-text{
     display: flex;
-    width: 1020px;
+    width: 1050px;
     margin: 0 auto;
     &__title h2{
       font-weight: bold;
@@ -59,24 +59,32 @@
     }
     &__middle{
       margin-top: 42px;
-      font-size: 10px;
+      font-size: 12px;
     }
     &__list {
       margin: 16px;
-      font-size: 10px;
+      font-size: 12px;
+      color: rgb(197, 197, 197);
+
       &__icon{
         float: left;
-        margin: 15px; 
+        margin-left: 15px;
+        font-size: 2em; 
       }
     }
   }
   &-last{
     display: flex;
-    &-icon{
-      margin: 16px;
+    &__icon{
+      display: flex;
+      width: 1020px;
+      margin: 30px auto 20px;
     }
-    &-text{
-      font-size: 5px;
+    &__text{
+      width: 75%;
+      margin: auto 0px;
+      text-align: center;
+      font-size: 12px;
     }
   }
 }

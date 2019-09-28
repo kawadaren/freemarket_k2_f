@@ -1,6 +1,6 @@
 .sell-btn{
   font-size: 22px;
-  background-color: blue;
+  background-color: $red;
   width: 160px;
   height: 160px;
   border-radius: 50%;
@@ -11,8 +11,10 @@
   &__text{
     padding-top: 30px;
     line-height: 10px;
+    color: $white;
   }
   &__icon{
     font-size: 3em;
+    color: $white;
   }
 }
