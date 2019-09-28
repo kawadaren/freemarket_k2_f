@@ -30,7 +30,7 @@
 ## addressテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|reference|null: false, foreign_key: true|
+|user|reference|null: false, foreign_key: true|
 |postal|string|null: false|
 |region|string|null: false|
 |city|string|null: false|
@@ -153,8 +153,8 @@
 ## reportテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|reference|null: false, foreign_key: true|
-|item_id|reference|null: false, foreign_key: true|
+|user|reference|null: false, foreign_key: true|
+|item|reference|null: false, foreign_key: true|
 
 ### Association
 - has_many :users
@@ -188,7 +188,7 @@
 |------|----|-------|
 |customer|integer|null: false|
 |card|integer|null: false|
-|user_id|reference|null: false, foreign_key: true|
+|user|reference|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :user
@@ -198,7 +198,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |url|string|null: false|
-|item_id|reference|null: false, foreign_key: true|
+|item|reference|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :item
@@ -208,7 +208,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-|item_id|reference|null: false, foreign_key: true|
+|item|reference|null: false, foreign_key: true|
 
 ### Association
 - has_many :items
@@ -218,7 +218,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-|item_id|reference|null: false, foreign_key: true|
+|item|reference|null: false, foreign_key: true|
 
 ### Association
 - has_many :items
