@@ -1,0 +1,90 @@
+.bottom{
+  background-color: bisque;
+  height: 260px;
+  display: flex;
+  justify-content: center;
+  &-text{
+    &__upper{
+      font-weight: bold;
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
+    &__lower{
+      font-size: 35px;
+      margin-bottom: 20px;
+    }
+  }
+  &-icon{
+    display: flex;
+    
+    &__merucari img{
+      height: 68px;
+      width: 68px;
+      margin-right: 20px;
+    }
+    &__appstore img{
+      height: 40px;
+      margin-right: 8px;
+      width: 144px;
+    }
+    &__googleplay{
+      height: 40px;
+      margin-right: 8px;
+      width: 144px;
+    }
+  }
+  &-right{
+    &__freetag img{
+      width: 300px;
+      height: 260px;
+    }
+  }
+}
+
+
+
+
+.footer{
+  background-color: $black;
+  color:$white;
+  justify-content: center;
+  &-text{
+    display: flex;
+    width: 1050px;
+    margin: 0 auto;
+    &__title h2{
+      font-weight: bold;
+      font-size: 16px;
+      margin: 16px;
+    }
+    &__middle{
+      margin-top: 42px;
+      font-size: 12px;
+    }
+    &__list {
+      margin: 16px;
+      font-size: 12px;
+      color: rgb(197, 197, 197);
+
+      &__icon{
+        float: left;
+        margin-left: 15px;
+        font-size: 2em; 
+      }
+    }
+  }
+  &-last{
+    display: flex;
+    &__icon{
+      display: flex;
+      width: 1020px;
+      margin: 30px auto 20px;
+    }
+    &__text{
+      width: 75%;
+      margin: auto 0px;
+      text-align: center;
+      font-size: 12px;
+    }
+  }
+}
