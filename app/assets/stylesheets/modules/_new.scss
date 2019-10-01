@@ -47,7 +47,61 @@
           }
         }
       }
-    //
+    &__item{
+      padding: 40px;
+      border-top: 1px solid #CCC;
+      border-bottom: 1px solid #CCC;
+    
+      &-name{
+        padding-bottom: 40px;
+        &__upper{
+          display: flex;
+          h3{
+            font-weight: bold;
+          }
+          span{
+            color: $white;
+            background-color: $red;
+            margin: 0 0 0 8px;
+            padding: 2px 4px;
+            border-radius: 2px;
+            font-size: 12px;
+          }
+        }
+        &__lower{
+          width: 586px;
+          margin: 8px 0 0;
+          border-radius: 4px;
+          border: 1px solid #CCC;
+          padding: 10px 16px 8px;
+        }
+      }
+      & .sell-form__describe{
+        &__upper{
+          display: flex;
+          h3{
+            font-weight: bold;
+          }
+          span{
+            color: $white;
+            background-color: $red;
+            margin: 0 0 0 8px;
+            padding: 2px 4px;
+            border-radius: 2px;
+            font-size: 12px;
+          }
+  
+        }
+        &__lower{
+          width: 586px;
+          min-height: 104px;
+          margin: 8px 0 0;
+          border-radius: 4px;
+          border: 1px solid #CCC;
+          padding: 10px 16px 8px;
+        }
+      }
+    }
     &__details{
       padding: 40px 40px 0px 40px;
       justify-content: space-between;
@@ -216,61 +270,6 @@
       }
     }
   }  
-  }
-  .sell-form__item{
-    padding: 40px;
-    border-top: 1px solid #CCC;
-    border-bottom: 1px solid #CCC;
-  
-    .sell-form__name{
-      padding-bottom: 40px;
-      &__upper{
-        display: flex;
-        h3{
-          font-weight: bold;
-        }
-        span{
-          color: $white;
-          background-color: $red;
-          margin: 0 0 0 8px;
-          padding: 2px 4px;
-          border-radius: 2px;
-          font-size: 12px;
-        }
-      }
-      &__lower{
-        width: 586px;
-        margin: 8px 0 0;
-        border-radius: 4px;
-        border: 1px solid #CCC;
-        padding: 10px 16px 8px;
-      }
-    }
-    .sell-form__describe{
-      &__upper{
-        display: flex;
-        h3{
-          font-weight: bold;
-        }
-        span{
-          color: $white;
-          background-color: $red;
-          margin: 0 0 0 8px;
-          padding: 2px 4px;
-          border-radius: 2px;
-          font-size: 12px;
-        }
-
-      }
-      &__lower{
-        width: 586px;
-        min-height: 104px;
-        margin: 8px 0 0;
-        border-radius: 4px;
-        border: 1px solid #CCC;
-        padding: 10px 16px 8px;
-      }
-    }
   }
   .footer{
     padding: 40px;
