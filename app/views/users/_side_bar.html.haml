@@ -1,8 +1,8 @@
 .side-bar
   %nav.side-bar-nav
-    %ul.menu
+    %ul.menu.top
       %li
-        %a.list-item.active
+        = link_to "https://www.mercari.com/jp/", class: "list-item active" do
           マイページ
           = fa_icon 'angle-right', class: "icon-arrow-right"
       = render "users/shared/side_bar_item", name: "お知らせ"
