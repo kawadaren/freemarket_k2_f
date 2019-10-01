@@ -107,14 +107,14 @@
       justify-content: space-between;
       display: flex;
       border-bottom: 1px solid red;
-      &-right{
+      &__right{
         h3{
           font-size: 14px;
           font-weight: bold;
         }
       }
-      &-left{
-        &__upper{
+      &__left{
+        &-upper{
           display: flex;
           padding: 2px 4px;
           margin: 0 0 8px;
