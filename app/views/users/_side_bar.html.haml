@@ -1,0 +1,38 @@
+.side-bar
+  %nav.side-bar-nav
+    %ul.menu
+      %li
+        %a.list-item.active
+          マイページ
+          = fa_icon 'angle-right', class: "icon-arrow-right"
+      = render "users/shared/side_bar_item", name: "お知らせ"
+      = render "users/shared/side_bar_item", name: "やることリスト"
+      = render "users/shared/side_bar_item", name: "いいね！一覧"
+      = render "users/shared/side_bar_item", name: "出品する"
+      = render "users/shared/side_bar_item", name: "出品した商品 - 出品中"
+      = render "users/shared/side_bar_item", name: "出品した商品 - 取引中"
+      = render "users/shared/side_bar_item", name: "出品した商品 - 売却済み"
+      = render "users/shared/side_bar_item", name: "購入した商品 - 取引中"
+      = render "users/shared/side_bar_item", name: "購入した商品 - 過去の取引"
+      = render "users/shared/side_bar_item", name: "ニュース一覧"
+      = render "users/shared/side_bar_item", name: "評価一覧"
+      = render "users/shared/side_bar_item", name: "ガイド"
+      = render "users/shared/side_bar_item", name: "お問い合わせ"
+
+    %h3.head
+      メルペイ
+    %ul.menu
+      = render "users/shared/side_bar_item", name: "売上・振込申請"
+      = render "users/shared/side_bar_item", name: "ポイント"
+
+    %h3.head
+      設定
+    %ul.menu
+      = render "users/shared/side_bar_item", name: "プロフィール"
+      = render "users/shared/side_bar_item", name: "発送元・お届け先住所変更"
+      = render "users/shared/side_bar_item", name: "支払い方法"
+      = render "users/shared/side_bar_item", name: "メール/パスワード"
+      = render "users/shared/side_bar_item", name: "本人情報"
+      = render "users/shared/side_bar_item", name: "電話番号の確認"
+      = render "users/shared/side_bar_item", name: "ログアウト"
+

@@ -1,0 +1,63 @@
+= render "login/header"
+= render "shared/pagepath"
+
+.middle.clearfix
+  .main
+    = render partial: "side_bar"
+    .user-info
+      .user-info__icon
+        %a{ href: 'https://www.mercari.com/jp/'}
+          = image_tag 'member_photo_noimage_thumb', alt: 'ユーザのアイコン'
+          %h2.bold テストユーザー
+          .count
+            .count__evaluation
+              評価
+              %span.bold 0
+            .count__exhibit
+              出品数
+              %span.bold 0
+
+      %ul.user-info__tabs
+        %li.active
+          %h3
+            %a{ href: "#mypage-tab-todo"}
+              お知らせ
+        %li
+          %h3
+            %a{ href: "#mypage-tab-todo"}
+              やることリスト
+
+      .user-info__tab-content
+        %ul.user-info__tab-content-list
+          = render "users/shared/user_info_content", text: "テストテストテストテスト", time: "1日前"
+          = render "users/shared/user_info_content", text: "テストテストテストテスト", time: "1日前"
+          = render "users/shared/user_info_content", text: "テストテストテストテスト", time: "2日前"
+          = render "users/shared/user_info_content", text: "テストテストテストテスト", time: "3日前"
+          = render "users/shared/user_info_content", text: "テストテストテストテスト", time: "5日前"
+          %li.mypage-go-list
+            %a{ href: 'https://www.mercari.com/jp/' }
+              一覧を見る
+
+
+      .user-info__products
+        %h2.user-info__products-head
+          購入した商品
+        %ul.user-info__products-tabs
+          %li.active
+            %h3
+              %a{ href: "#mypage-tab-todo"}
+                お知らせ
+          %li
+            %h3
+              %a{ href: "#mypage-tab-todo"}
+                やることリスト
+        %ul.user-info__product-content
+          %li.user-info__product-content-not-found
+            取引中の商品がありません
+
+
+  = render "shared/sell-btn"
+  = render "shared/footer"
+
+
+
