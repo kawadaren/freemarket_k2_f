@@ -1,0 +1,11 @@
+%li
+  = link_to "https://www.mercari.com/jp/", class: "mypage-item-link" do
+    = image_tag 'mercari_profile', class: 'lazyloaded'
+    .mypage-item-body
+      .mypage-item-text
+        #{text}
+      %time
+        = fa_icon 'clock-o', class: "icon-time"
+        %span
+          #{time}
+    = fa_icon 'angle-right', class: "icon-arrow-right"
