@@ -1,0 +1,23 @@
+.header
+  .upper-header
+    .upper-header__logo
+      = image_tag 'merucari-logo.svg', alt: 'メルカリロゴ', height: "36", width: "134"
+    %input.upper-header__search{placeholder: "何かお探しですか"}
+      .upper-header__search-btn
+        = fa_icon 'search'
+  .lower-header
+    .lower-header-right
+      .lower-header-right__categori
+        = fa_icon 'list-ul', class: "lower-header-right__categori-btn"
+        カテゴリーから探す
+      .lower-header-right__bland
+        = fa_icon 'tags', class: "lower-header-right__bland-btn"
+        ブランドから探す
+    .lower-header-left
+      .lower-header-left__registration
+        新規会員登録
+      .lower-header-left__login
+        ログイン
+      
+        //マイページのアイコンは、自分で選んだ画像が表示されるようにする必要あり。今は仮置き
+  

@@ -1,0 +1,36 @@
+= render "login/header"
+.pagepath
+  %ul
+    %li.pass-page
+      = link_to "https://www.mercari.com/jp/" do
+        %span.pass-page__title
+          メルカリ
+      = fa_icon 'angle-right', class: "icon-arrow-right"
+    %li.pass-page
+      = link_to "https://www.mercari.com/jp/" do
+        %span.pass-page__title
+          マイページ
+      = fa_icon 'angle-right', class: "icon-arrow-right"
+    %li.pass-page
+      %span.pass-page__title
+        プロフィール
+
+
+.middle.clearfix
+  .main
+    = render partial: "side_bar"
+    .user-edit
+      %h2.user-edit__title
+        プロフィール
+      = form_tag( root_path, method: :get ) do
+        .user-edit__icon
+          = image_tag 'member_photo_noimage_thumb', alt: 'ユーザのアイコン'
+          %input.user-edit__icon-text{name: 'nickname', placeholder: '例)AYA☆セール中'}
+
+        .user-edit__content
+          %textarea.user-edit__content-text{ name: 'introduction', placeholder: '例）こんにちは☆ ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪'}
+          = submit_tag '変更する', class: 'change-submit'
+
+
+= render "shared/sell-btn"
+= render "shared/footer"
