@@ -29,6 +29,10 @@
             span{
               color: $white;
               background-color: $red;
+              margin: 0px;
+              padding: 2px 4px;
+              border-radius: 2px;
+              font-size: 12px;
             }
           }
           &-lower p{
@@ -204,13 +208,15 @@
         margin-top: 40px;
         line-height: 48px;
         background-color: $red;
+        color: $white
       }
       &-backbtn{
         text-align: center;
         margin: 24px auto 0;
         line-height: 48px;
         width: 45%;
-        background-color: $gray;
+        background-color: #aaa;
+        color: $white;
       }
     }
   }  
