@@ -11,7 +11,22 @@ body {
     margin: 0 auto;
     background-color: #fff;
     
-      
+      .no_account_login {
+        padding: 40px 64px;
+        text-align: center;
+        p {
+          font-size: 14px;
+        }
+        a {
+          margin: 8px 0 0;
+          display: block;
+          border: 1px solid #0099e8;
+          background-color: #0099e8;
+          color: #fff;
+          line-height: 40px;
+          text-decoration: none;
+          font-size: 14px;
+        }
       }
       .account_cooperation{
         border-top: 1px solid #eee;
@@ -99,23 +114,7 @@ body {
           }
         }
       }
-      .no_account_login {
-        padding: 40px 64px;
-        text-align: center;
-        p {
-          font-size: 14px;
-        }
-        a {
-          margin: 8px 0 0;
-          display: block;
-          border: 1px solid #0099e8;
-          background-color: #0099e8;
-          color: #fff;
-          line-height: 40px;
-          text-decoration: none;
-          font-size: 14px;
-        }
-      }
+    }
   }
 
  
