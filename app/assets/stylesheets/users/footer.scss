@@ -1,0 +1,36 @@
+.footer {
+  margin: 0 auto;
+  width: 456px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  height: 220px;
+  padding:40px 0;
+  text-align: center;
+  .footer_text {
+    margin: 0;
+    a {
+      text-decoration: none;
+      font-size: 12px;
+      font:#333333;
+      margin: 0;
+      padding: 0 5px;
+      &:visited {
+        color: #333333;
+      }
+    }
+    
+  }
+  .footer__image {
+    text-decoration: none;
+    .mercari_image {
+      margin: 40px auto 0;
+      display: block;
+    }
+    p {
+      margin: 8px 0 0;
+      font-size: 13px;
+    }
+  }
+}
