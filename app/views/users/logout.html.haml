@@ -1,0 +1,31 @@
+= render "login/header"
+.pagepath
+  %ul
+    %li.pass-page
+      = link_to "https://www.mercari.com/jp/" do
+        %span.pass-page__title
+          メルカリ
+      = fa_icon 'angle-right', class: "icon-arrow-right"
+    %li.pass-page
+      = link_to "https://www.mercari.com/jp/" do
+        %span.pass-page__title
+          マイページ
+      = fa_icon 'angle-right', class: "icon-arrow-right"
+    %li.pass-page
+      %span.pass-page__title
+        ログアウト
+
+.middle.clearfix
+  .main
+    = render partial: "side_bar"
+    .user-logout
+      .user-logout-content
+        = form_tag( root_path, method: :get ) do
+          .single-content
+            %button.single-content--btn
+              ログアウト
+
+
+= render "shared/sell-btn"
+= render "shared/footer"
+

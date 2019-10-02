@@ -1,1 +1,34 @@
+.header
+  = render 'header'
 
+.main
+  .main_zone
+    .no_account_login
+      %p アカウントをお持ちでない方はこちら
+      = link_to('新規会員登録', {})
+    .account_cooperation
+      %button.login_facebook.sns_login
+        = fa_icon 'facebook-square', class: "contents__btn--icon"
+        %text.text Facebookでログイン
+        
+       
+      %button.login_google.sns_login
+        = image_tag 'google_icon.png', alt: '', height: '30px', width: '30px', class: 'google_icon'
+        %text.text Googleでログイン
+        
+        
+    .login_form
+      .mail_address.input_value
+        %input{placeholder: "メールアドレス", type: "e-mail",class: "input_form"}/
+
+      .password.input_value
+        %input{placeholder: "パスワード", type: "password", class: "input_form"}/
+      %button.login_button.sns_login
+        %text.text ログイン
+      = link_to('パスワードをお忘れの方', {},class: "forget_password")
+
+
+  
+ 
+.footer
+  = render 'footer'
