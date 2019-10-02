@@ -1,5 +1,7 @@
 .body{
   background-color: $gray;
+  overflow: hidden;
+  //画面の右側に余白が出るのでoverflow: hiddenで消している。このページのデザインであれば、hiddenでも問題ないと考えhiddenを指定している。
   .header{
     text-align: center;
     padding: 40px 0 0 0;
