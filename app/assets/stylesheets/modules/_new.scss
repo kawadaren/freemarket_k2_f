@@ -1,0 +1,310 @@
+.body{
+  background-color: $gray;
+  overflow: hidden;
+  //画面の右側に余白が出るのでoverflow: hiddenで消している。このページのデザインであれば、hiddenでも問題ないと考えhiddenを指定している。
+  .header{
+    text-align: center;
+    padding: 40px 0 0 0;
+    background-color: $gray;
+  }
+  .main{
+    .sell-form{
+      background-color: $white;
+      width: 700px;
+      margin: 0 auto;
+      &__header{
+        font-size: 22px;
+        font-weight: bold;
+        padding: 32px 16px;
+        text-align: center;
+        border-bottom: solid 1px $gray;
+      }
+      &__upload{
+        border-bottom: solid 1px $gray;
+        padding: 40px;
+        &__head{
+          &-upper{
+            display: flex;
+            h3{
+              font-weight: bold;
+            }
+            span{
+              color: $white;
+              background-color: $red;
+              margin: 0px;
+              padding: 2px 4px;
+              border-radius: 2px;
+              font-size: 12px;
+            }
+          }
+          &-lower p{
+            font-size: 14px;
+            margin: 8px 0 0;
+          }
+        }
+        &__items{
+          width: 620px;
+          background-color: $gray;
+          margin: 16px auto 0;
+          &-text{
+            padding: 40px;
+            text-align: center;
+            border: dashed 1px #CCC;
+          }
+        }
+      }
+    //sell-form__describeは、.footerの直前に記載している。
+    &__details{
+      padding: 40px 40px 0px 40px;
+      justify-content: space-between;
+      display: flex;
+      border-bottom: 1px solid red;
+      &-right h3{
+        font-size: 14px;
+        font-weight: bold;
+      }
+      &-left{
+        &__upper{
+          display: flex;
+          padding: 2px 4px;
+          margin: 0 0 8px;
+          h3{
+            font-weight: bold;
+          }
+          span{
+            color: $white;
+            background-color: $red;
+            margin: 0 0 0 8px;
+            padding: 2px 4px;
+            border-radius: 2px;
+            font-size: 12px;
+          }
+        }
+        &__lower{
+          width: 400px;
+          height: 40px;
+          margin-bottom: 40px;
+          border-radius: 4px;
+          border: 1px solid #CCC;
+        }
+      }
+    }
+    &__shipping{
+      padding: 40px 40px 0px 40px;
+      justify-content: space-between;
+      display: flex;
+      border-bottom: 1px solid #CCC;
+      &-right h3{
+        font-size: 14px;
+        font-weight: bold;
+      }
+      &-left{
+        &__upper{
+          display: flex;
+          padding: 2px 4px;
+          margin: 0 0 8px;
+          h3{
+            font-weight: bold;
+          }
+          span{
+            color: $white;
+            background-color: $red;
+            margin: 0 0 0 8px;
+            padding: 2px 4px;
+            border-radius: 2px;
+            font-size: 12px;
+          }
+        }
+        &__lower{
+          width: 400px;
+          height: 40px;
+          margin-bottom: 40px;
+          border-radius: 4px;
+          border: 1px solid #CCC;
+        }
+      }
+    }
+    &__price{
+      display: flex;
+      padding: 40px; 
+      border-bottom: 1px solid #CCC;
+      justify-content: space-between;
+      &-right{
+        width: 50%;
+        h3{
+          float: left;
+          font-size: 14px;
+          font-weight: bold;
+        }
+        &__question{
+          width: 14px;
+          height: 14px;
+          text-align: center;
+          display: inline-block;
+          font-size: 12px;
+          border-radius: 50%;
+          background-color: $blue;
+        }
+      }
+      &-left{
+        width: 400px;
+        &__top{
+          width: 40%;
+          display: flex;
+          float: left;
+          margin: 14px 0 24px;
+          h3{
+            font-weight: bold;
+          }
+          span{
+            color: $white;
+            background-color: $red;
+            margin: 0 0 0 8px;
+            padding: 2px 4px;
+            border-radius: 2px;
+            font-size: 12px;
+          }
+        }
+        &__input{
+          display: flex;
+          margin: 0 0 14px;
+          text-align: right;
+          padding: 0px 0px 8px 16px;
+          border-radius: 4px;
+          h5 {
+            margin-top: 14px;
+            font-size: 12px;
+            margin-right: 10px;
+          }
+          &__form{
+            width: 80%;
+            text-align: right;
+            border-radius: 4px;
+            padding: 10px 16px 8px;
+            }
+        }
+  
+        &__middle{
+          padding: 20px 0px;
+          font-size: 14px;
+          border-top: 1px solid #CCC;
+        } 
+        &__bottom{
+          padding: 20px 0px;
+          border-top: 1px solid #CCC;
+          font-weight: bold;
+        }
+      }
+     }
+    &__footer{
+      padding: 40px;
+      &-text{
+        line-height: 1.5;
+        font-size: 14px;
+        a {
+          color: $blue;
+        }
+      }
+      &-sellbtn{
+        text-align: center;
+        margin-top: 40px;
+        line-height: 48px;
+        background-color: $red;
+        color: $white
+      }
+      &-backbtn{
+        text-align: center;
+        margin: 24px auto 0;
+        line-height: 48px;
+        width: 45%;
+        background-color: #aaa;
+        color: $white;
+      }
+    }
+  }  
+  }
+  .sell-form__item{
+    padding: 40px;
+    border-top: 1px solid #CCC;
+    border-bottom: 1px solid #CCC;
+    .sell-form__name{
+      padding-bottom: 40px;
+      &__upper{
+        display: flex;
+        h3{
+          font-weight: bold;
+        }
+        span{
+          color: $white;
+          background-color: $red;
+          margin: 0 0 0 8px;
+          padding: 2px 4px;
+          border-radius: 2px;
+          font-size: 12px;
+        }
+      }
+      &__lower{
+        width: 586px;
+        margin: 8px 0 0;
+        border-radius: 4px;
+        border: 1px solid #CCC;
+        padding: 10px 16px 8px;
+      }
+    }
+    .sell-form__describe{
+      &__upper{
+        display: flex;
+        h3{
+          font-weight: bold;
+        }
+        span{
+          color: $white;
+          background-color: $red;
+          margin: 0 0 0 8px;
+          padding: 2px 4px;
+          border-radius: 2px;
+          font-size: 12px;
+        }
+      }
+      &__lower{
+        width: 586px;
+        min-height: 104px;
+        margin: 8px 0 0;
+        border-radius: 4px;
+        border: 1px solid #CCC;
+        padding: 10px 16px 8px;
+      }
+    }
+  }
+  .footer{
+    padding: 40px;
+    width: 456px;
+    height: 220px;
+    margin: 0 auto;
+    background-color: $gray;
+    &-text {
+      list-style: none;
+      display: flex;
+      margin: 0 auto;
+      &__list {
+        font-size: 12px;
+        margin: 0 0 0 16px;
+        color: #333;
+      }
+    }
+    &-last{
+      width: 80px;
+      height: 65px;
+      margin: 40px auto 0;
+    }
+    &-copy{
+      margin: 8px 0 0;
+      text-align: center;
+      color: #333;
+      font-size: 7px;
+    }    
+  }
+  
+}
+
+
