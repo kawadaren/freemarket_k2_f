@@ -1,5 +1,5 @@
 .wrapper
-  = render 'logout/header'
+  = render 'header/logout'
   .top-image__slider
     .slider-wrapper
       .slide-item__sumaho
@@ -16,19 +16,19 @@
         = image_tag 'sumaho.png', alt: 'メルカリスマホ写真', height: "390"
         %p.arrow-next
           >
-        %p.arrow-prev 
-          <         
+        %p.arrow-prev
+          <
       .slide-item__camp
         = image_tag 'camp.png', alt: 'キャンプ用品', height: "390"
         %p.arrow-next
           >
-        %p.arrow-prev 
-          <       
+        %p.arrow-prev
+          <
     //スライドは後回しにしている。キャンプの写真の裏に隠れるように現在配置している
 
   .item-categori
     人気の商品一覧
-  
+
   .item
     .item-images
       .item-images__text
@@ -70,7 +70,7 @@
         %span.item-image__price
           4321
         %span.item-image__name
-          ショートコート 
+          ショートコート
       .item-image
         .item-image__box
           = image_tag 'item.jpg', alt: 'ショートコート', height:'188', width: '188'
@@ -108,7 +108,6 @@
           ショートコート
 
   = render 'shared/sell-btn'
-  
+
   = render 'shared/footer'
 
-  
