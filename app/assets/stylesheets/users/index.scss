@@ -10,7 +10,6 @@
     width: 456px;
     margin: 0 auto;
     background-color: #fff;
-    
       .no_account_login {
         padding: 40px 64px;
         text-align: center;
@@ -43,7 +42,7 @@
           }
           .contents__btn--icon::before {
             font-size: 26px;
-            
+
           }
           }
         }
@@ -64,7 +63,7 @@
           text-decoration: none;
           cursor: pointer;
         }
-        
+
       }
       .login_form {
         padding: 24px 64px 32px;
@@ -83,14 +82,14 @@
             line-height: 1.5;
             font-size: 16px;
             width: 100%;
-            
+
 
           }
           input::placeholder {
             display: block;
             padding:10px;
           }
-          
+
         }
         .login_button {
           margin-top:24px;
@@ -103,7 +102,7 @@
           font-size:14px;
           cursor: pointer;
           text-align: center;
-        } 
+        }
         .forget_password {
           text-decoration: none;
           font-size: 14px;
@@ -118,4 +117,3 @@
     }
   }
 
- 

@@ -1,0 +1,140 @@
+= render "header/login"
+.pagepath
+  %ul
+    %li.pass-page
+      = link_to root_path do
+        %span.pass-page__title
+          メルカリ
+      = fa_icon 'angle-right', class: "icon-arrow-right"
+    %li.pass-page
+      = link_to root_path do
+        %span.pass-page__title
+          マイページ
+      = fa_icon 'angle-right', class: "icon-arrow-right"
+    %li.pass-page
+      = link_to users_creditcard_path do
+        %span.pass-page__title
+          支払い方法
+      = fa_icon 'angle-right', class: "icon-arrow-right"
+    %li.pass-page
+      %span.pass-page__title
+        クレジットカード情報入力
+
+.middle.clearfix
+  .main
+    = render partial: "side_bar"
+    .credit-info
+      %h2.credit-info__title
+        クレジットカード情報入力
+      = form_tag( users_creditcard_path, method: :get ) do
+        .credit-info__form
+          .form-group
+            %label.form-group__title
+              カード番号
+            %span.form-require
+              必須
+            %input.form-text{placeholder: '半角数字のみ'}
+            %ul.card-list
+              %li
+                = image_tag 'credit-card/visa', width: "49", height: "20"
+              %li
+                = image_tag 'credit-card/master-card', width: "34", height: "20"
+              %li
+                = image_tag 'credit-card/saison-card', width: "30", height: "20"
+              %li
+                = image_tag 'credit-card/jcb', width: "32", height: "20"
+              %li
+                = image_tag 'credit-card/american_express', width: "21", height: "20"
+              %li
+                = image_tag 'credit-card/dinersclub', width: "32", height: "20"
+              %li
+                = image_tag 'credit-card/discover', width: "32", height: "20"
+
+
+          .form-group
+            %label.form-group__title
+              有効期限
+            %span.form-require
+              必須
+            %br
+            .select-date
+              %select.date-list
+                %option{value: "01"}
+                  01
+                %option{value: "02"}
+                  02
+                %option{value: "03"}
+                  03
+                %option{value: "04"}
+                  04
+                %option{value: "05"}
+                  05
+                %option{value: "06"}
+                  06
+                %option{value: "07"}
+                  07
+                %option{value: "08"}
+                  08
+                %option{value: "09"}
+                  09
+                %option{value: "10"}
+                  10
+                %option{value: "11"}
+                  11
+                %option{value: "12"}
+                  12
+              = fa_icon 'angle-down', class: "icon-arrow-down"
+              %span
+                月
+
+            .select-date
+              %select.date-list
+                %option{value: "19"}
+                  19
+                %option{value: "20"}
+                  20
+                %option{value: "21"}
+                  21
+                %option{value: "22"}
+                  22
+                %option{value: "23"}
+                  23
+                %option{value: "24"}
+                  24
+                %option{value: "25"}
+                  25
+                %option{value: "26"}
+                  26
+                %option{value: "27"}
+                  27
+                %option{value: "28"}
+                  28
+                %option{value: "29"}
+                  29
+              = fa_icon 'angle-down', class: "icon-arrow-down"
+              %span
+                年
+          .form-group
+            %label.form-group__title
+              セキュリティコード
+            %span.form-require
+              必須
+            %input.form-text{placeholder: 'カード背面4桁もしくは3桁の番号'}
+            .about-seqcode
+              .about-seqcode__text
+                %span.question
+                  ?
+                カード裏面の番号とは？
+          %button.form-submit
+            追加する
+
+
+
+
+
+
+
+
+
+= render "shared/sell-btn"
+= render "shared/footer"
