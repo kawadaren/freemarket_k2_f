@@ -1,0 +1,207 @@
+= render 'login/header' #ヘッダー部分
+.body  
+  .box
+    %h1 高知  ショルダーバック
+    .box-item
+      .item-photo
+        写真
+    
+      %table.item-table
+        %tr 
+          %th 出品者
+          %td 
+            .user 高知家
+            .rating
+              .user-rating
+                .rating-good
+                  = fa_icon 'search'
+                %span 7 
+              .user-rating
+                .rating-good
+                  = fa_icon 'search'
+                %span 0
+              .user-rating
+                .rating-good
+                  = fa_icon 'search'
+                %span 8
+        %tr 
+          %th カテゴリー
+          %td 
+            .category
+              レディース 
+            .category-sub
+              バック
+            .category-sub-sub 
+              ショルダーバッグ
+        %tr 
+          %th ブランド
+          %td コーチ
+        %tr 
+          %th 商品の状態
+          %td 目立った傷なし
+        %tr 
+          %th 配送料の負担
+          %td 送料込み（出品者負担）
+        %tr
+          %th 配送の方法
+          %td らくらくメルカリ便
+        %tr
+          %th 配送元地域
+          %td 高知県
+        %tr
+          %th 発送日の目安
+          %td 2~3日で発送
+    .box-price
+      %span.box-price-bold
+        ¥4,000
+      %span.box-price-tax
+        (税込)
+      %span.box-price-fee
+        送料込み
+    .box-btn
+      購入画面に進む
+
+    .box-comment-seller
+      %p 
+        縦26㎝×横27㎝×マチ3.5㎝です。
+        財布、ポーチ、スマホなどのお荷物の時に。
+        シルバーなのでシーズンを選びません。
+        ベルトの長さを色々調節できるタイプです。
+        安心・安全の高知製です！
+    .box-last
+      .box-last__left
+        .like
+          = fa_icon 'search', class: "like-icon"
+          %span.like-text
+            いいね！
+          %span.like-count
+            1
+        .report
+          = fa_icon 'search', class: "report-icon"
+          %span.report-text
+            不適切な商品の報告
+      .box-last__right
+        = fa_icon 'search', class: "safe-icon"
+        %span.safe-icon
+          あんしん・あんぜんへの取り組み
+
+  .comment-buyer
+    %p
+      相手のことを考え丁寧なコメントを心がけましょう。不快な言葉遣いなどは利用制限や退会処分となることがあります。
+    %textarea{name: "body", type: "text", value: ""}
+    .comment-buyer__btn
+      コメントする
+  
+  %ul.item-link
+    %li.item-link__left
+      =fa_icon 'arrow-left', class: "item-link__icon"
+      レターパックプラス40枚
+    %li.item-link__right
+      レターパックプラス40枚
+      =fa_icon 'arrow-right', class: "item-link__icon"
+      
+  .sns-box
+    %ul.sns-icon
+      %li.sns-icon-facebook
+        =fa_icon 'facebook', class: "item-link__icon"
+      %li.sns-icon-twitter
+        =fa_icon 'facebook', class: "item-link__icon"
+      %li.sns-icon-line
+        =fa_icon 'facebook', class: "item-link__icon"
+      %li.sns-icon-pintarest
+        =fa_icon 'facebook', class: "item-link__icon"
+   
+  .box-user-item
+    %h2 高知家さんのその他の出品
+    .user-items
+      .user-item-box
+        .photo
+          = image_tag 'item.jpg', alt: 'ショートコート', height:'220', width: '220'
+        .item-details
+          %h4 ショートコート
+          .item-price
+            1800
+      .user-item-box
+        .photo
+          = image_tag 'item.jpg', alt: 'ショートコート', height:'220', width: '220'
+        .item-details
+          %h4 ショートコート
+          .item-price
+            1800
+      .user-item-box
+        .photo
+          = image_tag 'item.jpg', alt: 'ショートコート', height:'220', width: '220'
+        .item-details
+          %h4 ショートコート
+          .item-price
+            1800
+      .user-item-box
+        .photo
+          = image_tag 'item.jpg', alt: 'ショートコート', height:'220', width: '220'
+        .item-details
+          %h4 ショートコート
+          .item-price
+            1800
+      .user-item-box
+        .photo
+          = image_tag 'item.jpg', alt: 'ショートコート', height:'220', width: '220'
+        .item-details
+          %h4 ショートコート
+          .item-price
+            1800
+      .user-item-box
+        .photo
+          = image_tag 'item.jpg', alt: 'ショートコート', height:'220', width: '220'
+        .item-details
+          %h4 ショートコート
+          .item-price
+            1800
+  
+  .box-other-item
+    %h2 高知家さんのその他の出品
+    .other-items
+      .other-item-box
+        .photo
+          = image_tag 'item.jpg', alt: 'ショートコート', height:'220', width: '220'
+        .item-details
+          %h4 ショートコート
+          .item-price
+            1800
+      .other-item-box
+        .photo
+          = image_tag 'item.jpg', alt: 'ショートコート', height:'220', width: '220'
+        .item-details
+          %h4 ショートコート
+          .item-price
+            1800
+      .other-item-box
+        .photo
+          = image_tag 'item.jpg', alt: 'ショートコート', height:'220', width: '220'
+        .item-details
+          %h4 ショートコート
+          .item-price
+            1800
+      .other-item-box
+        .photo
+          = image_tag 'item.jpg', alt: 'ショートコート', height:'220', width: '220'
+        .item-details
+          %h4 ショートコート
+          .item-price
+            1800
+      .other-item-box
+        .photo
+          = image_tag 'item.jpg', alt: 'ショートコート', height:'220', width: '220'
+        .item-details
+          %h4 ショートコート
+          .item-price
+            1800
+      .other-item-box
+        .photo
+          = image_tag 'item.jpg', alt: 'ショートコート', height:'220', width: '220'
+        .item-details
+          %h4 ショートコート
+          .item-price
+            1800
+    
+
+= render 'shared/footer'

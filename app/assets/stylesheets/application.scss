@@ -6,7 +6,7 @@
 
 @import "users/footer_simple";
 @import "users/header_simple";
-@import "users/index";
+@import "users/index"; //一旦、無効にしている。マージする時直す
 // @import "modules/items";
 // @import "modules/sell-btn";
 // @import "modules/footer";
@@ -17,6 +17,7 @@
 @import "users/logout";
 @import "modules/items";
 @import "modules/new";
+@import "modules/show";
 @import "modules/sell-btn";
 @import "modules/footer";
 @import "modules/header";
