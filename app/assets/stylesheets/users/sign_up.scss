@@ -1,0 +1,43 @@
+.header-simple {
+  h1 {
+    float: left;
+    display: inline-block;
+    margin: 40px 0 0;
+    font-size: inherit;
+    // 後でメルカリのロゴ動かす
+    transform:translate(10px,0px);
+  }
+}
+.main {
+  font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-repeat: no-repeat;
+    display: block;
+  .main_zone {
+    width: 700px;
+    margin: 0 auto;
+    background-color: #fff;
+    .input_registration {
+      display: block;
+      text-align: center;
+      font-size: 22px;
+      padding: 32px;
+      font-weight: bold;
+     }
+  }
+  .sell-form__name__upper {
+    display: flex;
+    h3{
+      font-weight: bold;
+    }
+    span{
+      color: $white;
+      background-color: $red;
+      margin-left: 10px;
+      padding: 2px 4px;
+      border-radius: 2px;
+      font-size: 12px;
+    }
+  }
+} 
