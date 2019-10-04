@@ -1,0 +1,70 @@
+body {
+  background: #f5f5f5;
+  .main {
+    .main_zone {
+      width: 700px;
+      margin: 0 auto;
+      background-color: #fff;
+      .new_registration {
+      display: block;
+      text-align: center;
+      font-size: 22px;
+      padding: 32px;
+      font-weight: bold;
+     }
+      
+      .account_cooperation {
+        padding: 40px 40px 64px;
+        .registration_form {
+          max-width: 343px;
+          margin: 0 auto;
+          .login_email {
+            background-color: #ea352d;
+            color: #fff;
+            .contents__btn--icon {
+              display: inline-block;
+              float: left;
+              transform:translate(10px,10px);
+            }
+            .contents__btn--icon::before {
+              font-size: 24px;
+            }
+          }
+          .login_facebook {
+            background-color: #385185;
+            color: #fff;
+            margin-top:16px;
+            i {
+              float: left;
+              transform:translate(10px,15px);
+              border-radius: none;
+            }
+            .contents__btn--icon::before {
+              font-size: 26px;
+              
+            }
+            }
+          }
+          .login_google {
+            margin-top:16px;
+            border:#979797 solid 1px;
+            background-color: #fff;
+            .google_icon {
+              float: left;
+              transform:translate(7px,10px)
+            }
+          }
+          .sns_login {
+            font-size: 14px;
+            display: block;
+            width: 100%;
+            text-align: center;
+            line-height:45px;
+            text-decoration: none;
+            cursor: pointer;
+            border-radius: 4px;
+          }
+      }
+    }
+  }
+}
