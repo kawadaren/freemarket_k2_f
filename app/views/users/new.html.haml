@@ -1,21 +1,21 @@
 = render 'header_simple'
+.new_page
+  .main
+    .main_zone
+      %h2.new_registration 新規会員登録
+      
+      .account_cooperation
+        .registration_form
+          %button.login_email.sns_login
+            = fa_icon 'envelope', class: "contents__btn--icon"
+            %text.text メールアドレスで登録する
 
-.main
-  .main_zone
-    %h2.new_registration 新規会員登録
-    
-    .account_cooperation
-      .registration_form
-        %button.login_email.sns_login
-          = fa_icon 'envelope', class: "contents__btn--icon"
-          %text.text メールアドレスで登録する
-
-        %button.login_facebook.sns_login
-          = fa_icon 'facebook-square', class: "contents__btn--icon"
-          %text.text Facebookで登録する
-          
-        %button.login_google.sns_login
-          = image_tag 'google_icon.png', alt: '', height: '30px', width: '30px', class: 'google_icon'
-          %text.text Googleで登録する
+          %button.login_facebook.sns_login
+            = fa_icon 'facebook-square', class: "contents__btn--icon"
+            %text.text Facebookで登録する
+            
+          %button.login_google.sns_login
+            = image_tag 'google_icon.png', alt: '', height: '30px', width: '30px', class: 'google_icon'
+            %text.text Googleで登録する
 
 = render 'footer_simple'
