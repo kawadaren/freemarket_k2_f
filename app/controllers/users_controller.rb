@@ -13,4 +13,12 @@ class UsersController < ApplicationController
   def logout
   end
 
+  def creditcard
+  end
+
+  def addcreditcard
+  end
+
+
+
 end

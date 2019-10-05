@@ -12,7 +12,7 @@
           マイページ
       = fa_icon 'angle-right', class: "icon-arrow-right"
     %li.pass-page
-      = link_to users_creditcard_path do
+      = link_to creditcard_user_path do
         %span.pass-page__title
           支払い方法
       = fa_icon 'angle-right', class: "icon-arrow-right"
@@ -26,7 +26,7 @@
     .credit-info
       %h2.credit-info__title
         クレジットカード情報入力
-      = form_tag( users_creditcard_path, method: :get ) do
+      = form_tag( creditcard_user_path, method: :get ) do
         .credit-info__form
           .form-group
             %label.form-group__title
