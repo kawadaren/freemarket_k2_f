@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   def new
   end
+
   def index
   end
 
@@ -18,7 +19,5 @@ class UsersController < ApplicationController
 
   def addcreditcard
   end
-
-
 
 end
