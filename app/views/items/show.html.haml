@@ -14,15 +14,15 @@
             .rating
               .user-rating
                 .rating-good
-                  = fa_icon 'search'
+                  = fa_icon 'heart'
                 %span 7 
               .user-rating
                 .rating-good
-                  = fa_icon 'search'
+                  = fa_icon 'heart'
                 %span 0
               .user-rating
                 .rating-good
-                  = fa_icon 'search'
+                  = fa_icon 'heart'
                 %span 8
         %tr 
           %th カテゴリー
@@ -71,17 +71,17 @@
     .box-last
       .box-last__left
         .like
-          = fa_icon 'search', class: "like-icon"
+          = fa_icon 'heart', class: "like-icon"
           %span.like-text
             いいね！
           %span.like-count
             1
         .report
-          = fa_icon 'search', class: "report-icon"
+          = fa_icon 'heart', class: "report-icon"
           %span.report-text
             不適切な商品の報告
       .box-last__right
-        = fa_icon 'search', class: "safe-icon"
+        = fa_icon 'heart', class: "safe-icon"
         %span.safe-icon
           あんしん・あんぜんへの取り組み
 
@@ -119,36 +119,56 @@
           = image_tag 'item.jpg', alt: 'ショートコート', height:'220', width: '220'
         .item-box__details
           %h4 ショートコート
-          .item-box__price
+          .item-box__details-price
             1800
+            .item-box__details-icon
+              = fa_icon 'heart', class: "item-likes"
+              .item-likes-count
+                1
       .item-box
         .item-box__photo
           = image_tag 'item.jpg', alt: 'ショートコート', height:'220', width: '220'
         .item-box__details
           %h4 ショートコート
-          .item-box__price
+          .item-box__details-price
             1800
+            .item-box__details-icon
+              = fa_icon 'heart', class: "item-likes"
+              .item-likes__count
+                1
       .item-box
         .item-box__photo
           = image_tag 'item.jpg', alt: 'ショートコート', height:'220', width: '220'
         .item-box__details
           %h4 ショートコート
-          .item-box__price
+          .item-box__details-price
             1800
+            .item-box__details-icon
+              = fa_icon 'heart', class: "item-likes"
+              .item-likes__count
+                1
       .item-box
         .item-box__photo
           = image_tag 'item.jpg', alt: 'ショートコート', height:'220', width: '220'
         .item-box__details
           %h4 ショートコート
-          .item-box__price
+          .item-box__details-price
             1800
+            .item-box__details-icon
+              = fa_icon 'heart', class: "item-likes"
+              .item-likes__count
+                1
       .item-box
         .item-box__photo
           = image_tag 'item.jpg', alt: 'ショートコート', height:'220', width: '220'
         .item-box__details
           %h4 ショートコート
-          .item-box__price
+          .item-box__details-price
             1800
+            .item-box__details-icon
+              = fa_icon 'heart', class: "item-likes"
+              .item-likes__details-count
+                1
   
   .other-items
     %h2 高知家さんのその他の出品
@@ -158,43 +178,67 @@
           = image_tag 'item.jpg', alt: 'ショートコート', height:'220', width: '220'
         .other-item-box__details
           %h4 ショートコート
-          .other-item-box__price
+          .other-item-box__details-price
             1800
+            .other-item-box__details-icon
+              = fa_icon 'heart', class: "other-item-likes"
+              .other-item-likes__details-count
+                1
       .other-item-box
         .other-item-box__photo
           = image_tag 'item.jpg', alt: 'ショートコート', height:'220', width: '220'
         .other-item-box__details
           %h4 ショートコート
-          .other-item-box__price
+          .other-item-box__details-price
             1800
+            .other-item-box__details-icon
+              = fa_icon 'heart', class: "other-item-likes"
+              .other-item-likes__details-count
+                1
       .other-item-box
         .other-item-box__photo
           = image_tag 'item.jpg', alt: 'ショートコート', height:'220', width: '220'
         .other-item-box__details
           %h4 ショートコート
-          .other-item-box__price
+          .other-item-box__details-price
             1800
+            .other-item-box__details-icon
+              = fa_icon 'heart', class: "other-item-likes"
+              .other-item-likes__count
+                1
       .other-item-box
         .other-item-box__photo
           = image_tag 'item.jpg', alt: 'ショートコート', height:'220', width: '220'
         .other-item-box__details
           %h4 ショートコート
-          .other-item-box__price
+          .other-item-box__details-price
             1800
+            .other-item-box__icon
+              = fa_icon 'heart', class: "other-item-likes"
+              .other-item-likes__details-count
+                1
       .other-item-box
         .other-item-box__photo
           = image_tag 'item.jpg', alt: 'ショートコート', height:'220', width: '220'
         .other-item-box__details
           %h4 ショートコート
-          .other-item-box__price
+          .other-item-box__details-price
             1800
+            .other-item-box__details-icon
+              = fa_icon 'heart', class: "other-item-likes"
+              .other-item-likes__details-count
+                1
       .other-item-box
         .other-item-box__photo
           = image_tag 'item.jpg', alt: 'ショートコート', height:'220', width: '220'
         .other-item-box__details
           %h4 ショートコート
-          .other-item-box__price
+          .other-item-box__details-price
             1800
+            .other-item-box__details-icon
+              = fa_icon 'heart', class: "other-item-likes"
+              .other-item-likes__details-count
+                1
     
 
 = render 'shared/footer'
