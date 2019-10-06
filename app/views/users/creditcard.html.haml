@@ -1,0 +1,43 @@
+= render 'shared/header/login'
+
+.pagepath
+  %ul
+    %li.pass-page
+      = link_to root_path do
+        %span.pass-page__title
+          メルカリ
+      = fa_icon 'angle-right', class: "icon-arrow-right"
+    %li.pass-page
+      = link_to root_path do
+        %span.pass-page__title
+          マイページ
+      = fa_icon 'angle-right', class: "icon-arrow-right"
+    %li.pass-page
+      %span.pass-page__title
+        支払い方法
+
+.middle.clearfix
+  .main
+    = render partial: "side_bar"
+    .credit-info
+      %h2.credit-info__title
+        支払い方法
+      .credit-info__content
+        .credit-info__content-title
+          %h3
+            クレジットカード一覧
+        .credit-info__content-add-card
+          .add-card--btn
+            = link_to addcreditcard_user_path do
+              = fa_icon 'credit-card', class: "add-card--btn-submit"
+              クレジットカードを追加する
+        .credit-info__content-about
+          = link_to "https://www.mercari.com/jp/" do
+            支払い方法について
+            = fa_icon 'angle-right', class: "icon-arrow-right"
+
+
+
+
+= render "shared/sell-btn"
+= render "shared/footer"
