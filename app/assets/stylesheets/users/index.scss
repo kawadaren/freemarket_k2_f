@@ -1,49 +1,57 @@
+.new_registration {
+  background: #f5f5f5;
+  .main {
+    font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-repeat: no-repeat;
+    display: block;
+    .main_zone {
+    width: 456px;
+    margin: 0 auto;
+    background-color: #fff;
+      .no_account_login {
+        padding: 40px 64px;
+        text-align: center;
+        p {
+          font-size: 14px;
+        }
+        a {
+          margin: 8px 0 0;
+          display: block;
+          border: 1px solid #0099e8;
+          background-color: #0099e8;
+          color: #fff;
+          line-height: 40px;
+          text-decoration: none;
+          font-size: 14px;
+        }
+      }
+      .account_cooperation{
+        border-top: 1px solid #eee;
+        padding: 32px 64px;
+        margin: 0;
+        
+        .login_facebook {
+          background-color: #385185;
+          color: #fff;
+          i {
+            float: left;
+            transform:translate(10px,15px);
+            border-radius: none;
+          }
+          .contents__btn--icon::before {
+            font-size: 26px;
 
-.main {
-  font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
-  margin: 0;
-  padding: 0;
-  background-repeat: no-repeat;
-  display: block;
-  .main_zone {
-  width: 456px;
-  margin: 0 auto;
-  background-color: #fff;
-  
-    .no_account_login {
-      padding: 40px 64px;
-      text-align: center;
-      p {
-        font-size: 14px;
-      }
-      a {
-        margin: 8px 0 0;
-        display: block;
-        border: 1px solid #0099e8;
-        background-color: #0099e8;
-        color: #fff;
-        line-height: 40px;
-        text-decoration: none;
-        font-size: 14px;
-      }
-    }
-    .account_cooperation{
-      border-top: 1px solid #eee;
-      padding: 32px 64px;
-      margin: 0;
-      .login_facebook {
-        background-color: #385185;
-        color: #fff;
-        i {
-          float: left;
-          transform:translate(10px,15px);
-          border-radius: none;
+          }
+          }
         }
         .contents__btn--icon::before {
           font-size: 26px;
           
         }
         }
+
       }
       .login_google {
         margin-top:16px;
@@ -81,26 +89,30 @@
           line-height: 1.5;
           font-size: 16px;
           width: 100%;
-          
+
+          &:first-child {
+            margin:0;
+          }
+          .input_form {
+            height: 48px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            background: #fff;
+            line-height: 1.5;
+            font-size: 16px;
+            width: 100%;
+
+
+          }
+          input::placeholder {
+            display: block;
+            padding:10px;
+          }
 
         }
         input::placeholder {
           display: block;
-          padding:10px;
-        }
-        
-      }
-      .login_button {
-        margin-top:24px;
-        background: #ea352d;
-        border: 1px solid #ea352d;
-        color: #fff;
-        display: block;
-        width: 100%;
-        line-height: 48px;
-        font-size:14px;
-        cursor: pointer;
-        text-align: center;
+
       } 
       .forget_password {
         text-decoration: none;
@@ -110,9 +122,25 @@
         margin-top: 40px;
         &:hover {
           text-decoration: underline;
+          width: 100%;
+          line-height: 48px;
+          font-size:14px;
+          cursor: pointer;
+          text-align: center;
+        }
+        .forget_password {
+          text-decoration: none;
+          font-size: 14px;
+          color: #0099e8;
+          display: block;
+          margin-top: 40px;
+          &:hover {
+            text-decoration: underline;
+          }
         }
       }
     }
   }
+
 
 
