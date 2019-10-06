@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   def new
   end
+
   def index
   end
 
@@ -11,6 +12,12 @@ class UsersController < ApplicationController
   end
 
   def logout
+  end
+
+  def creditcard
+  end
+
+  def addcreditcard
   end
 
 end

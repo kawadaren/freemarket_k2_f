@@ -1,13 +1,14 @@
-= render 'shared/header/logout'
+= render 'shared/header/login'
+
 .pagepath
   %ul
     %li.pass-page
-      = link_to "https://www.mercari.com/jp/" do
+      = link_to root_path do
         %span.pass-page__title
           メルカリ
       = fa_icon 'angle-right', class: "icon-arrow-right"
     %li.pass-page
-      = link_to "https://www.mercari.com/jp/" do
+      = link_to root_path do
         %span.pass-page__title
           マイページ
       = fa_icon 'angle-right', class: "icon-arrow-right"

@@ -111,6 +111,8 @@ select {
   font-family:inherit;
   font-size:inherit;
   font-weight:inherit;
+  -moz-appearance: none;
+  -webkit-appearance: none;
 }
 /*to enable resizing for IE*/
 input,
