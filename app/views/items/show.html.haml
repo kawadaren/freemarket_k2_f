@@ -4,8 +4,47 @@
     %h1 高知  ショルダーバック
     .box-item
       .item-photo
-        写真
-    
+        .owl-carousel.owl-loaded.owl-drag
+          .owl-stage-outer
+            .owl-stage{ style: 'left:0px',width: '900px'}
+              .owl-item{style: 'width: 300px'}
+                .owl-item-inner
+                  = image_tag 'item.jpg', alt: 'ショートコート', height:'300', width: '300'
+              .owl-item{style: 'width: 300px'}
+                .owl-item-inner
+                  = image_tag 'item.jpg', alt: 'ショートコート', height:'300', width: '300'
+              .owl-item{style: 'width: 300px'}
+                .owl-item-inner
+                  = image_tag 'item.jpg', alt: 'ショートコート', height:'300', width: '300'
+              .owl-item{style: 'width: 300px'}
+                .owl-item-inner
+                  = image_tag 'item.jpg', alt: 'ショートコート', height:'300', width: '300'
+              .owl-item{style: 'width: 300px'}
+                .owl-item-inner
+                  = image_tag 'item.jpg', alt: 'ショートコート', height:'300', width: '300'
+              .owl-item{style: 'width: 300px'}
+                .owl-item-inner
+                  = image_tag 'item.jpg', alt: 'ショートコート', height:'300', width: '300'
+
+          .owl-dots
+            .owl-dot
+              = image_tag 'item.jpg', alt: 'ショートコート', height:'75', width: '75'
+          .owl-dots
+            .owl-dot
+              = image_tag 'item.jpg', alt: 'ショートコート', height:'300', width: '300'
+          .owl-dots
+            .owl-dot
+              = image_tag 'item.jpg', alt: 'ショートコート', height:'300', width: '300'
+          .owl-dots
+            .owl-dot
+              = image_tag 'item.jpg', alt: 'ショートコート', height:'300', width: '300'
+          .owl-dots
+            .owl-dot
+              = image_tag 'item.jpg', alt: 'ショートコート', height:'300', width: '300'
+          .owl-dots
+            .owl-dot
+              = image_tag 'item.jpg', alt: 'ショートコート', height:'300', width: '300'
+                
       %table.item-table
         %tr 
           %th 出品者
@@ -103,14 +142,14 @@
   .sns-box
     %ul.sns-icon
       %li.sns-icon-facebook
-        =fa_icon 'facebook', class: "item-link__icon"
+        =fa_icon 'facebook-square'
       %li.sns-icon-twitter
-        =fa_icon 'facebook', class: "item-link__icon"
+        =fa_icon 'twitter'
       %li.sns-icon-line
-        =fa_icon 'facebook', class: "item-link__icon"
+        = image_tag 'LINE_APP.png', alt: 'LINEのアイコン', height: '44', width: '44', class: 'line'
       %li.sns-icon-pintarest
-        =fa_icon 'facebook', class: "item-link__icon"
-   
+        =fa_icon 'pinterest'
+      
   .user-items
     %h2 高知家さんのその他の出品
     .user-item
@@ -136,7 +175,7 @@
               = fa_icon 'heart', class: "item-likes"
               .item-likes__count
                 1
-      .item-box
+      .item-box__right
         .item-box__photo
           = image_tag 'item.jpg', alt: 'ショートコート', height:'220', width: '220'
         .item-box__details
@@ -195,7 +234,7 @@
               = fa_icon 'heart', class: "other-item-likes"
               .other-item-likes__details-count
                 1
-      .other-item-box
+      .other-item-box__right
         .other-item-box__photo
           = image_tag 'item.jpg', alt: 'ショートコート', height:'220', width: '220'
         .other-item-box__details
@@ -228,7 +267,7 @@
               = fa_icon 'heart', class: "other-item-likes"
               .other-item-likes__details-count
                 1
-      .other-item-box
+      .other-item-box__right
         .other-item-box__photo
           = image_tag 'item.jpg', alt: 'ショートコート', height:'220', width: '220'
         .other-item-box__details
@@ -239,6 +278,17 @@
               = fa_icon 'heart', class: "other-item-likes"
               .other-item-likes__details-count
                 1
+  .pagepath__under
+    %ul
+      %li.pass-page__under
+        = link_to "https://www.mercari.com/jp/" do
+          %span.pass-page__left__under
+            メルカリ
+        = fa_icon 'angle-right', class: "icon-arrow-right"
+      %li.pass-page__under
+        %span.pass-page__right__under
+          高知家ショルダーバック
+      
     
 
 = render 'shared/footer'
