@@ -8,38 +8,36 @@
   width: 700px;
 
   &__header {
-    h2{
+    h2 {
       font-size: 22px;
       font-weight: bold;
-      text-align: center;
       padding: 16px;
+      text-align: center;
   }
  }
   &__item {
     border-top: 1px solid #f5f5f5;
     padding: 24px 12.5% 0;
     .space__item {
-      max-width: 320px;
       margin: 0 auto;
+      max-width: 320px;
       .buy-item {
         display: flex;
-        &-image {
-          img {
+        &-image img{
             width: 64px;
-          }
         }
-        &-name{
-          margin: 0 0 0 16px;
+        &-name {
           font-weight: bold;
+          margin: 0 0 0 16px;
         }
       }
       .buy-price {
         text-align: center;
         &-bold {
-          margin: 8px 0 0;
-          line-height: 1.5;
           font-size: 22px;
           font-weight: bold;
+          line-height: 1.5;
+          margin: 8px 0 0;
         }
         &-fee {
           margin: 0 0 0 8px;
@@ -47,41 +45,41 @@
         }
       }
       .buy-point {
+        background-color: #ccc;
+        border: 1px solid #ccc;
         font-size: 14px;
         margin: 16px 0 0 0;
         padding: 16px;
         text-align: center;
-        background-color: #ccc;
-        border: 1px solid #ccc;
       }
       .buy-price-payment {
         display: flex;
         justify-content: space-between;
-        &__left{
+        &__left {
           padding-top: 3px;
           font-weight: bold;
           font-size: 18px;
         }
-        &__right{
-          font-weight: bold;
+        &__right {
           font-size: 28px;
+          font-weight: bold;
         }
       }
       .buy-btn {
-        width: 100%;
-        line-height: 48px;
-        color: $white;
         background-color: #888;
         border: 1px solid #888;
+        color: $white;
         font-size: 14px;
+        line-height: 48px;
         margin: 20px 0 0;
+        width: 100%;
       }
     }
   }
   .space__shipping {
-    margin: 40px 0 0;
     border-top: 1px solid #f5f5f5;
     border-bottom: 1px solid #f5f5f5;
+    margin: 40px 0 0;
     .shipping {
       max-width: 320px;
       margin: 0 auto;
@@ -91,20 +89,20 @@
       }
       address {
         font-size: 14px;
-        margin: 8px 0 0;
         line-height: 1.4;
+        margin: 8px 0 0;
       }
       span {
+        color: $blue;
         display: block;
         text-align: right;
-        color: $blue;
       }
     }
   }
   .space__payment {
     padding: 24px 12.5% 40px;
-    .payment{
-      margin: 0px auto;
+    .payment {
+      margin: 0 auto;
       max-width: 320px;
 
       h3 {
@@ -112,13 +110,13 @@
       }
       p {
         font-size: 14px;
-        margin: 8px 0 0;
         line-height: 1.4;
+        margin: 8px 0 0;
       }
       span {
+        color: $blue;
         display: block;
         text-align: right;
-        color: $blue;
       }
     }
   }
