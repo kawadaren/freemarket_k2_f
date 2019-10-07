@@ -1,0 +1,43 @@
+=render 'users/header_simple'
+.buyconfirm
+  .buy-form
+    .buy-form__header
+      %h2 購入内容の確認
+    .buy-form__item
+      .space__item
+        .buy-item
+          .buy-item-image
+            = image_tag 'item.jpg', alt: 'ショートコート'
+          %p.buy-item-name
+            値下げ 高知 ショルダーバック
+        .buy-price
+          %span.buy-price-bold
+            ¥4,000
+          %span.buy-price-fee
+            送料込み
+        .buy-point
+          ポイントはありません
+        .buy-price-payment
+          .buy-price-payment__left
+            支払い金額
+          .buy-price-payment__right
+            ¥4,550
+        %button.buy-btn
+          購入する
+      
+    .space__shipping
+      .shipping
+        %h3 配送先
+        %address
+          〒123-4450<br>
+          高知県 高知市 永コック時町6 地域連携棟2F 205教室<br>
+          高知 ねこ
+        %span 変更する
+      
+    .space__payment
+      .payment
+        %h3 支払い方法
+        %p クレジットカード
+        %span 変更する
+    
+=render 'users/footer_simple'
