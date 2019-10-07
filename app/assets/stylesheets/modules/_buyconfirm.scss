@@ -23,7 +23,7 @@
       max-width: 320px;
       .buy-item {
         display: flex;
-        &-image img{
+        &-image img {
             width: 64px;
         }
         &-name {
@@ -40,15 +40,15 @@
           margin: 8px 0 0;
         }
         &-fee {
-          margin: 0 0 0 8px;
           font-size: 14px;
+          margin: 0 0 0 8px;
         }
       }
       .buy-point {
         background-color: #ccc;
         border: 1px solid #ccc;
         font-size: 14px;
-        margin: 16px 0 0 0;
+        margin: 16px 0 0;
         padding: 16px;
         text-align: center;
       }
@@ -56,9 +56,9 @@
         display: flex;
         justify-content: space-between;
         &__left {
-          padding-top: 3px;
-          font-weight: bold;
           font-size: 18px;
+          font-weight: bold;
+          padding-top: 3px;
         }
         &__right {
           font-size: 28px;
@@ -77,8 +77,8 @@
     }
   }
   .space__shipping {
-    border-top: 1px solid #f5f5f5;
     border-bottom: 1px solid #f5f5f5;
+    border-top: 1px solid #f5f5f5;
     margin: 40px 0 0;
     .shipping {
       max-width: 320px;
