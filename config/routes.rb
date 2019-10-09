@@ -10,6 +10,8 @@ Rails.application.routes.draw do
       get 'logout'
       get 'creditcard'
       get 'addcreditcard'
+      get 'sign_up'
+      get 'sign_up_tel'
     end
   end
 
