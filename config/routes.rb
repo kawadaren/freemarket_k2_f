@@ -12,6 +12,7 @@ Rails.application.routes.draw do
       get 'addcreditcard'
       get 'sign_up'
       get 'sign_up_tel'
+      get 'sign_up_address'
     end
   end
 
