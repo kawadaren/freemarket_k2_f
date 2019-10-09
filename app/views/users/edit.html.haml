@@ -1,13 +1,14 @@
-= render "login/header"
+= render 'shared/header/login'
+
 .pagepath
   %ul
     %li.pass-page
-      = link_to "https://www.mercari.com/jp/" do
+      = link_to root_path do
         %span.pass-page__title
           メルカリ
       = fa_icon 'angle-right', class: "icon-arrow-right"
     %li.pass-page
-      = link_to "https://www.mercari.com/jp/" do
+      = link_to root_path do
         %span.pass-page__title
           マイページ
       = fa_icon 'angle-right', class: "icon-arrow-right"
@@ -24,7 +25,7 @@
         プロフィール
       = form_tag( root_path, method: :get ) do
         .user-edit__icon
-          = image_tag 'member_photo_noimage_thumb', alt: 'ユーザのアイコン'
+          = image_tag 'member_photo_noimage_thumb.png', alt: 'ユーザのアイコン'
           %input.user-edit__icon-text{name: 'nickname', placeholder: '例)AYA☆セール中'}
 
         .user-edit__content

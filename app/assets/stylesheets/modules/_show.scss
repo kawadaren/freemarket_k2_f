@@ -1,0 +1,375 @@
+.clearfix::after {
+  content : " ";
+  display : block;
+  clear : both;
+}
+
+.body{
+  background-color: $gray;
+  .box{
+    background-color: white;
+    width: 620px;
+    margin: 40px auto 0;
+    padding: 24px 40px 40px;
+    h1 {
+      font-size: 24px;
+      text-align: center;
+      line-height: 1.4;
+      font-weight: bold;
+    }
+    &-item{
+      margin: 16px 0 0;
+      .item-photo{
+        float: left;
+        background-color: $gray;
+        min-width: 300px;
+        max-width: 300px;
+        min-height: 375px;
+        border-collapse: collapse;
+        .owl-carousel{
+          position: relative;
+          .owl-stage-outer{
+            position: relative;
+            overflow: hidden;
+          .owl-stage{
+            position: relative;
+            left: 0px;
+            width: 900px;
+          .owl-item{
+            width: 300px;
+            min-height: 1px;
+            float: left;
+            &__inner{
+              position: relative;
+              width: 100%;
+              height: 0;
+              padding: 0 0 100%;
+              .owl-lazy{
+                transition: opacity 400ms;
+              }
+              img{
+                position: absolute;
+                top: 0;
+                left:0;
+                bottom: 0;
+                right: 0;
+                width: 100%;
+                margin: auto;
+                max-height: 300px;
+              }
+            }
+          }
+        }
+      }
+      .owl-dots{
+        line-height: 0;
+        font-size: 0;
+        float: left;
+        .owl-dot{
+          position: relative;
+          overflow: hidden;
+          display: inline-block;
+          width: 75px;
+          height: 75px;
+          opacity: 0.4;
+          cursor: pointer;
+            img {
+              height: 75px;
+              width: 75px;
+              vertical-align: bottom;
+           }
+          }
+         }
+        }     
+       }
+      .item-table{
+        float: right;
+        min-width: 300px;
+        height: 420px;
+        margin: 0 auto;
+        tr{
+          th{
+            width: 39%;
+            text-align: left;
+            background-color: $gray;
+            padding: 8px;
+            border: 1px solid #f5f5f5;
+          }
+          td{
+            width: 61%;
+            border: 1px solid #f5f5f5;
+            .user{
+              color: $blue;
+            }
+            .rating{
+              display: flex;
+              .user-rating{
+                display: flex;
+                margin: 8px 0 0 16px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &-price{
+      text-align: center;
+      padding: 24px 0 0;
+      clear: both;
+      &-bold{
+        font-weight: bold;
+        font-size: 50px;
+        margin: 0 16px 0 0;
+      }
+      &-tax{
+        font-size: 10px;
+      }
+      &-fee{
+        font-size: 16px;
+      }
+    }
+    
+    &-btn{
+      text-align: center;
+      color: $white;
+      background-color: $red;
+      font-size: 24px;
+      line-height: 60px;
+      margin-top: 16px;
+    }
+  
+    &-comment-seller{
+      padding: 32px 0 0;
+      line-height: 1.5;
+      font-size: 18px;
+      p{
+        white-space: pre-wrap;
+      }
+    }
+    
+    &-last{
+      display: flex;
+      justify-content: space-between;
+      margin: 16px 0 0;
+      &__left{
+        display: flex;
+      }
+      .like{
+        font-size: 14px;
+        background-color: $gray;
+        border-radius: 40px;
+        padding: 8px 16px;
+        &-text{
+          margin: 1px 0 0 8px;
+        }
+      }
+      .report{
+        font-size: 14px;
+        background-color: $gray;
+        border-radius: 40px;
+        padding: 8px 16px;
+        margin: 0 0 0 16px;
+        &-text{
+          margin: 1px 0 0 8px;
+        }
+      }
+      &__right{
+        color: $blue;
+        margin: 8px 0 0;
+        .safe-icon{
+          font-size: 14px;
+          
+        }
+      }
+    }
+  }
+  
+  .comment-buyer{
+    width: 652px;
+    margin: 8px auto;
+    background-color: $white;
+    padding: 24px;
+    p{
+      background-color: #fff6de;
+      padding: 8px;
+      font-size: 14px;
+    }
+    textarea{
+      margin: 8px 0 0;
+      min-height: 104px;
+      width: 630px; //後で100%とかに直す事
+      max-width: 100%;
+      padding: 10px;
+      border: 1px solid $gray;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+    &__btn{
+      width: 100%;
+      line-height: 48px;
+      margin: 8px 0 0;
+      text-align: center;
+      background-color: #aaa;
+      border: 1px solid #aaa;
+      color: $white;
+    }
+  }
+  .item-link {
+    display: flex;
+    margin: 24px auto 0;
+    width: 700px;
+    justify-content: space-between;
+    &__left{
+      padding: 0 14px 0 0;
+    }
+    &__right{
+      padding: 0 0 0 14px;
+    }
+  }
+
+  .sns-box{
+    width: 700px;
+    margin: 24px auto;
+    padding: 32px 0 24px;
+    background-color: $white;
+    .sns-icon{
+      text-align: center;
+      justify-content: center;
+      display: flex;
+      margin: 30px 0 0;
+      li {
+        margin: 0 8px 8px 0;
+        width: 42px;
+        height: 42px;
+        border-radius: 4px;
+        .fa-facebook-square{
+          width: 44px;
+          height: 44px;
+          line-height: 44px;
+          border-radius: 10px;
+          font-size: 26px;
+          color: $white;
+          background-color: #385185;
+        }
+        .fa-twitter{
+          width: 44px;
+          height: 44px;
+          line-height: 44px;
+          border-radius: 10px;
+          font-size: 26px;
+          color: $white;
+          background-color: #5d9dc9;
+        }
+        .fa-pinterest{
+          width: 44px;
+          height: 44px;
+          line-height: 44px;
+          border-radius: 10px;
+          font-size: 26px;
+          color: $white;
+          background-color: #aa262a;
+        }
+
+      }
+    }
+  }
+  
+  .user-items{
+    width: 700px;
+    margin: 0 auto;
+    h2{
+      font-size: 22px;
+      margin: 24px 0 8px;
+      color: $blue;
+    }
+    .user-item{
+      display: flex;  //後で修正
+      flex-wrap: wrap;
+      .item-box{
+        margin: 0 20px 20px 0;
+        background-color: $white;
+        &__right{
+          margin: 0 0 20px 0;
+          background-color: $white;
+        }
+        &__details{
+          padding: 16px;
+          h4{
+            height: 3em;
+          }
+          &-price{
+            display: flex;
+            justify-content: space-between;
+          }
+          &-icon{
+            display: flex;
+          }
+        }
+      }
+    }
+  }
+  .other-items{
+    width: 700px;
+    margin: 0 auto;
+    h2{
+      font-size: 22px;
+      margin: 24px 0 8px;
+      color: $blue;
+    }
+    .other-item{
+      display: flex;  //後で修正
+      flex-wrap: wrap;
+      .other-item-box{
+        margin: 0 20px 20px 0;
+        background-color: $white;
+        &__right{
+          margin: 0 0 20px 0;
+        background-color: $white;
+        }
+        &__details{
+          padding: 16px;
+          h4{
+            height: 3em;
+          }
+          &-price{
+            display: flex;
+            justify-content: space-between;
+          }
+          &-icon{
+            display: flex;
+          }
+        }
+      }
+    }
+  }
+  .pagepath__under{
+    margin-top: 44px;
+    border-top: 1px solid #e8e3e3;
+    ul{
+      display: flex;
+      width: 1000px;
+      overflow: visible;
+      margin: 0 auto;
+      padding: 16px 0;
+      a{
+        text-decoration: none;
+        color: #333;
+      }
+      
+      i{
+        margin: 0 8px;
+        font-weight: bold;
+        color: #888;
+      }
+      .pass-page__right__under{
+        font-weight: bold;
+      }
+    }
+  }
+  
+}
+.main{
+  background-color: $gray;
+}
+
