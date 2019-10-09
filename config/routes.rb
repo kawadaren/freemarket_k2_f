@@ -1,14 +1,19 @@
 Rails.application.routes.draw do
 
-  
-
   root 'items#index'
 
-  resources :users, only: [:index, :show]
-  resources :items, only: [:index, :new]
-
-  get 'users/logout'
-  resources :users, only: [:index, :show, :edit]
+  resources :items, only: [:index, :new, :show] do
+    get 'buyconfirm'
+  end
+  resources :users, only: [:index, :edit, :show] do
+    member do
+      get 'logout'
+      get 'creditcard'
+      get 'addcreditcard'
+      get 'sign_up'
+      get 'sign_up_tel'
+    end
+  end
 
 
 end
