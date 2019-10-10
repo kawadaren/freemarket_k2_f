@@ -38,11 +38,12 @@
           もっと見る
       .item-image
         .item-image__box
-          = image_tag 'item.jpg', alt: 'ショートコート', height:'188', width: '188'
+          = image_tag @item.image, alt: 'ショートコート', height:'188', width: '188'
         %span.item-image__price
-          4321
+          ¥
+          = @item.price
         %span.item-image__name
-          ショートコート
+          = @item.name
       .item-image
         .item-image__box
           = image_tag 'item.jpg', alt: 'ショートコート', height:'188', width: '188'
