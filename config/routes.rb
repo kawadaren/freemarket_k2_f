@@ -13,6 +13,7 @@ Rails.application.routes.draw do
       get 'sign_up'
       get 'sign_up_tel'
       get 'sign_up_address'
+      get 'sign_up_pay'
     end
   end
 
