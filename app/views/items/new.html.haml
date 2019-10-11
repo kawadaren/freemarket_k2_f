@@ -95,16 +95,4 @@
         .sell-form__footer-backbtn
           もどる
   
-  .footer
-    %nav.footer-text
-      %li.footer-text__list
-        プライバシーポリシー
-      %li.footer-text__list
-        ヤドカリ利用規約
-      %li.footer-text__list
-        特定商取引に関する表記
-  
-    .footer-last
-      = image_tag 'merucari-logo-gray.svg', alt: 'メルカリのロゴ', width: '80', height: '65'
-    .footer-copy
-      &copy 2019 Merucati
+  = render 'users/footer_simple'
