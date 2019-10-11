@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   def index
-    @item = Item.find(2)
+    @items = Item.order("id DESC").limit(10)
   end
   
   def new
