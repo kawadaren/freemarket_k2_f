@@ -29,78 +29,17 @@
           人気の商品写真
         .item-images__text__right
           もっと見る
-      .item-image
-        .item-image__box
-          = image_tag 'item.jpg', alt: 'ショートコート', height:'188', width: '188'
-        %span.item-image__price
-          4321
-        %span.item-image__name
-          ショートコート
-      .item-image
-        .item-image__box
-          = image_tag 'item.jpg', alt: 'ショートコート', height:'188', width: '188'
-        %span.item-image__price
-          4321
-        %span.item-image__name
-          ショートコート
-      .item-image
-        .item-image__box
-          = image_tag 'item.jpg', alt: 'ショートコート', height:'188', width: '188'
-        %span.item-image__price
-          4321
-        %span.item-image__name
-          ショートコート
-      .item-image
-        .item-image__box
-          = image_tag 'item.jpg', alt: 'ショートコート', height:'188', width: '188'
-        %span.item-image__price
-          4321
-        %span.item-image__name
-          ショートコート
-      .item-image
-        .item-image__box
-          = image_tag 'item.jpg', alt: 'ショートコート', height:'188', width: '188'
-        %span.item-image__price
-          4321
-        %span.item-image__name
-          ショートコート
-      .item-image
-        .item-image__box
-          = image_tag 'item.jpg', alt: 'ショートコート', height:'188', width: '188'
-        %span.item-image__price
-          4321
-        %span.item-image__name
-          ショートコート
-      .item-image
-        .item-image__box
-          = image_tag 'item.jpg', alt: 'ショートコート', height:'188', width: '188'
-        %span.item-image__price
-          4321
-        %span.item-image__name
-          ショートコート
-      .item-image
-        .item-image__box
-          = image_tag 'item.jpg', alt: 'ショートコート', height:'188', width: '188'
-        %span.item-image__price
-          4321
-        %span.item-image__name
-          ショートコート
-      .item-image
-        .item-image__box
-          = image_tag 'item.jpg', alt: 'ショートコート', height:'188', width: '188'
-        %span.item-image__price
-          4321
-        %span.item-image__name
-          ショートコート
-      .item-image
-        .item-image__box
-          = image_tag 'item.jpg', alt: 'ショートコート', height:'188', width: '188'
-        %span.item-image__price
-          4321
-        %span.item-image__name
-          ショートコート
+      - @items.each do |item|
+        .item-image
+          .item-image__box
+            = image_tag item.image, alt: 'ショートコート', height:'188', width: '188'
+          %span.item-image__price
+            ¥
+            = item.price
+          %span.item-image__name
+            = item.name
+        
+     
 
   = render 'shared/sell-btn'
-
   = render 'shared/footer'
-
