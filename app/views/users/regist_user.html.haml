@@ -1,0 +1,79 @@
+= render 'shared/header/login'
+.pagepath
+  %ul
+    %li.pass-page
+      = link_to root_path do
+        %span.pass-page__title
+          メルカリ
+      = fa_icon 'angle-right', class: "icon-arrow-right"
+    %li.pass-page
+      = link_to root_path do
+        %span.pass-page__title
+          マイページ
+      = fa_icon 'angle-right', class: "icon-arrow-right"
+    %li.pass-page
+      %span.pass-page__title
+        本人情報の登録
+
+.middle.clearfix
+  .main
+    = render partial: "side_bar"
+    .credit-info
+      %h2.credit-info__title
+        本人情報の登録
+      .input_inner
+        .input_content
+          .form_group
+            %p
+              お客さまの本人情報をご登録ください。
+              %br
+                登録されたお名前・生年月日を変更する場合、本人確認書類の提出が必要になります。
+            %p.text_right
+              = link_to '本人確認書類のアップロードについて>'
+          .form_group
+            %label お名前
+            %p.user_info 山田 彩
+          .form_group
+            %label お名前カナ
+            %p.user_info ヤマダ アヤ
+          .form_group
+            %label 生年月日
+            %p.user_info 2000/01/01
+          .form_group
+            .input_form_default
+              %h3 郵便番号
+              %span.optional 任意
+            %input.add_info{placeholder: "例) 123-4567"}
+          .form_group
+            .input_form_default
+              %h3 都道府県
+              %span.optional 任意
+            -# ここはサーバーサイドの時に実装
+          .form_group
+            .input_form_default
+              %h3 市区町村
+              %span.optional 任意
+            %input.add_info{placeholder: "例) 横浜市緑区"}
+          .form_group
+            .input_form_default
+              %h3 番地
+              %span.optional 任意
+            %input.add_info{placeholder: "例) 青山1-1-1"}
+          .form_group
+            .input_form_default
+              %h3 建物名
+              %span.optional 任意
+            %input.add_info{placeholder: "例) 柳ビル103"}
+          .form_group
+            %button.btn_red
+              登録する
+          .form_group
+            %p.text_right
+              = link_to '本人情報の登録について>'
+
+
+
+
+
+= render "shared/sell-btn"
+= render "shared/footer"

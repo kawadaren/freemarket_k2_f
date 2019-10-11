@@ -5,11 +5,7 @@
 @import "mixins/vendor_prefix";
 @import "users/footer_simple";
 @import "users/header_simple";
-@import "users/index"; //一旦、無効にしている。マージする時直す
-// @import "modules/items";
-// @import "modules/sell-btn";
-// @import "modules/footer";
-// @import "modules/header"
+@import "users/index"; 
 @import "users/new";
 @import "users/show";
 @import "users/edit";
@@ -28,5 +24,6 @@
 @import "users/sign_up_address";
 @import "users/sign_up_pay";
 @import "users/sign_up_comp";
+@import "users/regist_user";
 
 

@@ -15,6 +15,7 @@ Rails.application.routes.draw do
       get 'sign_up_address'
       get 'sign_up_pay'
       get 'sign_up_comp'
+      get 'regist_user'
     end
   end
 
