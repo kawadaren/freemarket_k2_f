@@ -2,22 +2,29 @@
   = render 'shared/header/logout'
   .top-image__slider
     .slider-wrapper
-      .slide-item-wrap
-        .slide-item__sumaho
-          .slide-item__sumaho__left
-            .slide-item__sumaho__left__upper
-              スマホでかんたん<br>フリマアプリ
-            %p.slide-item__sumaho__left__lower
-              メルカリはスマホカメラからすぐに出品できる<br>購入時も安心な独自システムのアプリです
-            .slide-item__sumaho__left__appstore
-              = image_tag 'app-store.svg', alt: 'appstoreのアイコン'
-            .slide-item__sumaho__left__googleplay
-              = image_tag 'googleplay.svg', alt: 'googleplayのアイコン'
-          .slide-item__sumaho__right
-          = image_tag 'sumaho.png', alt: 'メルカリスマホ写真', height: "390"
+      .slide-item__sumaho
+        .slide-item__sumaho__left
+          .slide-item__sumaho__left__upper
+            スマホでかんたん<br>フリマアプリ
+          %p.slide-item__sumaho__left__lower
+            メルカリはスマホカメラからすぐに出品できる<br>購入時も安心な独自システムのアプリです
+          .slide-item__sumaho__left__appstore
+            = image_tag 'app-store.svg', alt: 'appstoreのアイコン'
+          .slide-item__sumaho__left__googleplay
+            = image_tag 'googleplay', alt: 'googleplayのアイコン'
+        .slide-item__sumaho__right
+        = image_tag 'sumaho.png', alt: 'メルカリスマホ写真', height: "390"
+        %p.arrow-next
+          >
+        %p.arrow-prev
+          <
       .slide-item__camp
-
-    //スライドは後回しにしている。
+        = image_tag 'camp.png', alt: 'キャンプ用品', height: "390"
+        %p.arrow-next
+          >
+        %p.arrow-prev
+          <
+    //スライドは後回しにしている。キャンプの写真の裏に隠れるように現在配置している
 
   .item-categori
     人気の商品一覧
@@ -29,77 +36,15 @@
           人気の商品写真
         .item-images__text__right
           もっと見る
-      .item-image
-        .item-image__box
-          = image_tag 'items/item.jpg', alt: 'ショートコート', height:'188', width: '188'
-        %span.item-image__price
-          4321
-        %span.item-image__name
-          ショートコート
-      .item-image
-        .item-image__box
-          = image_tag 'items/item.jpg', alt: 'ショートコート', height:'188', width: '188'
-        %span.item-image__price
-          4321
-        %span.item-image__name
-          ショートコート
-      .item-image
-        .item-image__box
-          = image_tag 'items/item.jpg', alt: 'ショートコート', height:'188', width: '188'
-        %span.item-image__price
-          4321
-        %span.item-image__name
-          ショートコート
-      .item-image
-        .item-image__box
-          = image_tag 'items/item.jpg', alt: 'ショートコート', height:'188', width: '188'
-        %span.item-image__price
-          4321
-        %span.item-image__name
-          ショートコート
-      .item-image
-        .item-image__box
-          = image_tag 'items/item.jpg', alt: 'ショートコート', height:'188', width: '188'
-        %span.item-image__price
-          4321
-        %span.item-image__name
-          ショートコート
-      .item-image
-        .item-image__box
-          = image_tag 'items/item.jpg', alt: 'ショートコート', height:'188', width: '188'
-        %span.item-image__price
-          4321
-        %span.item-image__name
-          ショートコート
-      .item-image
-        .item-image__box
-          = image_tag 'items/item.jpg', alt: 'ショートコート', height:'188', width: '188'
-        %span.item-image__price
-          4321
-        %span.item-image__name
-          ショートコート
-      .item-image
-        .item-image__box
-          = image_tag 'items/item.jpg', alt: 'ショートコート', height:'188', width: '188'
-        %span.item-image__price
-          4321
-        %span.item-image__name
-          ショートコート
-      .item-image
-        .item-image__box
-          = image_tag 'items/item.jpg', alt: 'ショートコート', height:'188', width: '188'
-        %span.item-image__price
-          4321
-        %span.item-image__name
-          ショートコート
-      .item-image
-        .item-image__box
-          = image_tag 'items/item.jpg', alt: 'ショートコート', height:'188', width: '188'
-        %span.item-image__price
-          4321
-        %span.item-image__name
-          ショートコート
-
+      - @items.each do |item|
+        .item-image
+          .item-image__box
+            = image_tag item.image, alt: 'ショートコート', height:'188', width: '188'
+          %span.item-image__price
+            ¥
+            = item.price
+          %span.item-image__name
+            = item.name
         
      
 
