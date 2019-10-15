@@ -15,6 +15,8 @@
 |selling|integer|null: false|
 |profit|integer|null: false|
 |point|integer|null: false|
+|nickname|string|null: false|
+|name_kana|string|null: false|
 
 ### Association
 - has_many :items, dependent: :destroy
