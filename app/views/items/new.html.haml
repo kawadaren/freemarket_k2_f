@@ -13,52 +13,60 @@
           .sell-form__upload__head-lower
             %p 最大10枚までアップロードできます
         .sell-form__upload__items
+          = form_for @item do |f|
+            = f.file_field :image, class: 'hidden'
           .sell-form__upload__items-text
             ドラッグアンドドロップ<br>
             またはクリックしてファイルをアップロード
       
       .sell-form__item
-        .sell-form__name
-          .sell-form__name__upper
-            %h3 商品名
-            %span 必須
-          %input.sell-form__name__lower{placeholder: "商品名（必須40字まで）"}
+        = form_for @item do |f|
+          .sell-form__name
+            .sell-form__name__upper
+              %h3 商品名
+              %span 必須
+            = f.text_field :name, class: "sell-form__name__lower", placeholder: '商品名（必須40字まで）'
+          //%input.sell-form__name__lower{placeholder: "商品名（必須40字まで）"}
         
-        .sell-form__describe
-          .sell-form__describe__upper
-            %h3 商品の説明
-            %span 必須
-          %input.sell-form__describe__lower{placeholder: "商品の説明"}
-        
+          .sell-form__describe
+            .sell-form__describe__upper
+              %h3 商品の説明
+              %span 必須
+            = f.text_area :name, class: "sell-form__name__lower", placeholder: '商品名（必須40字まで）'
+          //%input.sell-form__describe__lower{placeholder: "商品の説明"}
+          //商品の説明を入れるカラムがない
+
       .sell-form__details
         .sell-form__details-right
           %h3 商品の詳細
         .sell-form__details-left
-          .sell-form__details-left__upper
-            %h3 カテゴリ
-            %span 必須
-          %input.sell-form__details-left__lower{placeholder: "---"}
-          .sell-form__details-left__upper
-            %h3 商品の状態
-            %span 必須
-          %input.sell-form__details-left__lower{placeholder: "---"}
-        
+          = form_for @item do |f|
+            .sell-form__details-left__upper
+              %h3 カテゴリ
+              %span 必須
+            %input.sell-form__details-left__lower{placeholder: "---"}
+            .sell-form__details-left__upper
+              %h3 商品の状態
+              %span 必須
+            = f.select :state_id, Item.state_ids.keys, {}, {class: 'sell-form__shipping-left__lower'}
+      
       .sell-form__shipping
         .sell-form__shipping-right
           %h3 配送について
         .sell-form__shipping-left
-          .sell-form__shipping-left__upper
-            %h3 配送料の負担
-            %span 必須
-          %input.sell-form__shipping-left__lower{placeholder: "---"}
-          .sell-form__shipping-left__upper
-            %h3 発送元の地域
-            %span 必須
-          %input.sell-form__shipping-left__lower{placeholder: "---"}
-          .sell-form__shipping-left__upper
-            %h3 発送までの日数
-            %span 必須
-          %input.sell-form__shipping-left__lower{placeholder: "---"}
+          = form_for @item do |f|
+            .sell-form__shipping-left__upper
+              %h3 配送料の負担
+              %span 必須
+            = f.select :shipping_charge_id, Item.shipping_charge_ids.keys, {}, {class: 'sell-form__shipping-left__lower'}
+            .sell-form__shipping-left__upper
+              %h3 発送元の地域
+              %span 必須
+            = f.select :region_id, Item.region_ids.keys, {}, {class: 'sell-form__shipping-left__lower'}
+            .sell-form__shipping-left__upper
+              %h3 発送までの日数
+              %span 必須
+            = f.select :shipping_data_id, Item.shipping_data_ids.keys, {}, {class: 'sell-form__shipping-left__lower'}
       
       .sell-form__price
         .sell-form__price-right
