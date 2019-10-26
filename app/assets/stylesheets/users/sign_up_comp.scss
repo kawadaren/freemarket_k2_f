@@ -50,45 +50,16 @@
           background: #ccc;
           right: 50%;
         }
-        .progress1 {
+        .progress-status {
           background-color: #ea352d;
         }
-        .progress2 {
+        .progress-status::before {
           background-color: #ea352d;
         }
-        .progress3 {
+        .progress-status::after {
           background-color: #ea352d;
         }
-        .progress4 {
-          background-color: #ea352d;
-        }
-        .progress5 {
-          background-color: #ea352d;
-        }
-        .progress2::before {
-          background-color: #ea352d;
-        }
-        .progress3::before {
-          background-color: #ea352d;
-        }
-        .progress4::before {
-          background-color: #ea352d;
-        }
-        .progress5::before {
-          background-color: #ea352d;
-        }
-        .progress1::after {
-          background-color: #ea352d;
-        }
-        .progress2::after {
-          background-color: #ea352d;
-        }
-        .progress3::after {
-          background-color: #ea352d;
-        }
-        .progress4::after {
-          background-color: #ea352d;
-        }
+        
 
         .progress1::before {
           content: none;
