@@ -1,13 +1,10 @@
 .header-simple {
   h1 {
-    float: left;
     display: inline-block;
     margin: 40px 0 0;
     font-size: inherit;
-    // 後でメルカリのロゴ動かす
-    transform:translate(340px,0px);
   }
-  .progress-ber {
+  .progress-ber5 {
     display: inline-block;
     vertical-align: top;
     padding: 40px 0 0 44px;
@@ -53,13 +50,43 @@
           background: #ccc;
           right: 50%;
         }
-        .progress-status {
+        .progress1 {
           background-color: #ea352d;
         }
-        .progress-status::before {
+        .progress2 {
           background-color: #ea352d;
         }
-        .progress-status::after {
+        .progress3 {
+          background-color: #ea352d;
+        }
+        .progress4 {
+          background-color: #ea352d;
+        }
+        .progress5 {
+          background-color: #ea352d;
+        }
+        .progress2::before {
+          background-color: #ea352d;
+        }
+        .progress3::before {
+          background-color: #ea352d;
+        }
+        .progress4::before {
+          background-color: #ea352d;
+        }
+        .progress5::before {
+          background-color: #ea352d;
+        }
+        .progress1::after {
+          background-color: #ea352d;
+        }
+        .progress2::after {
+          background-color: #ea352d;
+        }
+        .progress3::after {
+          background-color: #ea352d;
+        }
+        .progress4::after {
           background-color: #ea352d;
         }
 
