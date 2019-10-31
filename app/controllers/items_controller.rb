@@ -5,8 +5,12 @@ class ItemsController < ApplicationController
   
   def new
   end
+  def cretate
+    item = Item.new
+  end
 
   def show
+    @item = Item.find(params[:id])
   end
 end
 

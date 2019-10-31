@@ -1,7 +1,8 @@
 = render 'shared/header/login' #ヘッダー部分
 .body  
   .box
-    %h1 高知  ショルダーバック
+    %h1 
+      = @item.name
     .box-item
       .item-photo
         .owl-carousel.owl-loaded.owl-drag
@@ -9,7 +10,7 @@
             .owl-stage
               .owl-item
                 .owl-item-inner
-                  = image_tag 'item.jpg', alt: 'ショートコート', height:'300', width: '300'
+                  = @item.image
               .owl-item
                 .owl-item-inner
                   = image_tag 'item.jpg', alt: 'ショートコート', height:'300', width: '300'
@@ -74,31 +75,38 @@
               ショルダーバッグ
         %tr 
           %th ブランド
-          %td コーチ
+          %td
+            = @item.bland_id
         %tr 
           %th 商品の状態
-          %td 目立った傷なし
+          %td
+            = @item.state_id
         %tr 
           %th 配送料の負担
-          %td 送料込み（出品者負担）
+          %td 
+            = @item.shipping_charge_id
         %tr
           %th 配送の方法
-          %td らくらくメルカリ便
+          %td 
+            = @item.shipping_method_id
         %tr
           %th 配送元地域
-          %td 高知県
+          %td 
+            = @item.region_id
         %tr
           %th 発送日の目安
-          %td 2~3日で発送
+          %td 
+            = @item.shipping_data_id
     .box-price
       %span.box-price-bold
-        ¥4,000
+        ¥
+        = @item.price
       %span.box-price-tax
         (税込)
       %span.box-price-fee
         送料込み
     .box-btn
-      購入画面に進む
+      = link_to('購入画面に進む', root_path, class: 'btn btn-default')
 
     .box-comment-seller
       %p 
