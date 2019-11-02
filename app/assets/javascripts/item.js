@@ -84,3 +84,18 @@ num1 = document.getElementById("first").value;
 num2 = document.getElementById("second").value;
 document.getElementById("result").innerHTML = Number(num1) - Number(num2);
 }
+
+$(function(){
+  var input = $('.sell-form__price-left__input__form');
+  var tes = 0.1
+  var price = tes * 10000
+  var profit = 10000 - 100
+  input.on('change', function(){
+    $('.sell-form__price-left__middle').append(price)
+    $('.sell-form__price-left__bottom').append(profit)
+  })
+  
+});
+
+
+

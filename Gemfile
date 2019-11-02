@@ -72,3 +72,4 @@ gem 'fog-aws'
 gem "font-awesome-rails"
 gem 'devise'
 gem 'active_hash'
+gem 'ancestry'

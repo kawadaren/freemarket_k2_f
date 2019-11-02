@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191022142944) do
+ActiveRecord::Schema.define(version: 20191031110749) do
+
+  create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "ancestry"
+    t.string   "name",       null: false
+  end
 
   create_table "item_images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "url",        null: false
@@ -21,20 +28,21 @@ ActiveRecord::Schema.define(version: 20191022142944) do
   end
 
   create_table "items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "name",               null: false
-    t.integer  "price",              null: false
-    t.integer  "category_id",        null: false
-    t.integer  "state_id",           null: false
-    t.integer  "size_id",            null: false
-    t.integer  "bland_id",           null: false
-    t.integer  "report_id",          null: false
-    t.integer  "region_id",          null: false
-    t.integer  "shipping_data_id",   null: false
-    t.integer  "shipping_method_id", null: false
-    t.integer  "shipping_charge_id", null: false
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.string   "name"
+    t.integer  "price"
+    t.integer  "category_id"
+    t.integer  "state_id"
+    t.integer  "size_id"
+    t.integer  "bland_id"
+    t.integer  "report_id"
+    t.integer  "region_id"
+    t.integer  "shipping_data_id"
+    t.integer  "shipping_method_id"
+    t.integer  "shipping_charge_id"
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
     t.string   "image"
+    t.text     "explanation",        limit: 65535
     t.index ["bland_id"], name: "index_items_on_bland_id", using: :btree
     t.index ["category_id"], name: "index_items_on_category_id", using: :btree
     t.index ["region_id"], name: "index_items_on_region_id", using: :btree
@@ -47,11 +55,10 @@ ActiveRecord::Schema.define(version: 20191022142944) do
   end
 
   create_table "regions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "name",       null: false
-    t.integer  "region_id",  null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["region_id"], name: "index_regions_on_region_id", using: :btree
+    t.integer  "prefecture_id"
+    t.string   "city"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
