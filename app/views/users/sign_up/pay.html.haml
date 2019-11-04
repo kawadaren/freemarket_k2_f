@@ -15,11 +15,11 @@
       %li.active
         支払い情報
         .progress-status.progress4
-      %li 
+      %li
         完了
         .progress-status.progress5
-  
-.input_address    
+
+.input_address
   .main
     .main_zone
       .input_form
@@ -47,7 +47,7 @@
                   = image_tag 'credit-card/dinersclub.svg', width: "32", height: "20"
                 %li
                   = image_tag 'credit-card/discover.svg', width: "32", height: "20"
-                
+
             .form-group
               %label.form-group__title
                 有効期限
@@ -121,11 +121,12 @@
                   %span.question
                     ?
                   カード裏面の番号とは？
-            %button.form-submit
-              追加する
+            = link_to comp_users_sign_up_index_path do
+              %button.form-submit
+                追加する
 
 
 
 
 
-= render 'footer_simple'
+= render 'users/footer_simple'

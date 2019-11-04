@@ -1,21 +1,29 @@
 = render 'users/header_simple'
-.new_page
+.select_new-registration
   .main
     .main_zone
-      %h2.new_registration 新規会員登録
-      
+      .no_account_login
+        %p アカウントをお持ちでない方はこちら
+        = link_to '新規会員登録', new_user_registration_path
       .account_cooperation
-        .registration_form
-          %button.login_email.sns_login
-            = fa_icon 'envelope', class: "contents__btn--icon"
-            %text.text メールアドレスで登録する
+        %button.login_facebook.sns_login
+          = fa_icon 'facebook-square', class: "contents__btn--icon"
+          %text.text Facebookでログイン
 
-          %button.login_facebook.sns_login
-            = fa_icon 'facebook-square', class: "contents__btn--icon"
-            %text.text Facebookで登録する
-            
-          %button.login_google.sns_login
-            = image_tag 'google_icon.png', alt: '', height: '30px', width: '30px', class: 'google_icon'
-            %text.text Googleで登録する
+
+        %button.login_google.sns_login
+          = image_tag 'google_icon.png', alt: '', height: '30px', width: '30px', class: 'google_icon'
+          %text.text Googleでログイン
+
+
+      .login_form
+        .mail_address.input_value
+          %input{placeholder: "メールアドレス", type: "e-mail",class: "input_form"}/
+
+        .password.input_value
+          %input{placeholder: "パスワード", type: "password", class: "input_form"}/
+        %button.login_button.sns_login
+          %text.text ログイン
+        = link_to('パスワードをお忘れの方', {},class: "forget_password")
 
 = render 'users/footer_simple'

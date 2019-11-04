@@ -12,12 +12,15 @@
         padding: 32px;
         font-weight: bold;
      }
-      
+
       .account_cooperation {
         padding: 40px 40px 64px;
         .registration_form {
           max-width: 343px;
           margin: 0 auto;
+          a{
+            text-decoration: none;
+          }
           .login_email {
             background-color: #ea352d;
             color: #fff;
@@ -41,7 +44,7 @@
             }
             .contents__btn--icon::before {
               font-size: 26px;
-              
+
             }
             }
           }
