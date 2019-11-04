@@ -25,6 +25,18 @@ ActiveRecord::Schema.define(version: 20191031110749) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["item_id"], name: "index_item_images_on_item_id", using: :btree
+ActiveRecord::Schema.define(version: 20191017103549) do
+
+  create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "user_id",    null: false
+    t.string   "postal",     null: false
+    t.string   "region",     null: false
+    t.string   "city",       null: false
+    t.string   "address",    null: false
+    t.string   "building",   null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_addresses_on_user_id", using: :btree
   end
 
   create_table "items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -84,4 +96,5 @@ ActiveRecord::Schema.define(version: 20191031110749) do
   end
 
   add_foreign_key "item_images", "items"
+  add_foreign_key "addresses", "users"
 end
