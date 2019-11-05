@@ -6,15 +6,24 @@ class ItemsController < ApplicationController
   
   def new
     @item = Item.new
+    @image = @item.images.build
   end
 
   def create
+   
     @item = Item.new(item_params)
-    # @item.update(params_int(item_params))
-    @item.save
-    
 
-    redirect_to root_path
+    if @item.save
+      params[:images]['image'].each do |a|
+        @image = @item.images.create!(image: a)
+      end
+      redirect_to root_path, notice: '出品した'
+     else
+      render :new
+     end
+  end 
+
+    #redirect_to root_path
     # if @item.save
       
     #   redirect_to root_path
@@ -33,7 +42,7 @@ class ItemsController < ApplicationController
       #     format.json
       #   end
       # end
-  end
+  
 
   def show
   end
@@ -44,8 +53,8 @@ class ItemsController < ApplicationController
   
 private
   def item_params
-    params.require(:item).permit(:name, :image, :explanation, :price, :category_id, :state_id, :shipping_charge_id, :region_id, :shipping_data_id)
-    
+    params.require(:item).permit(:name, :explanation, :price, :category_id, :state_id, :shipping_charge_id, :region_id, :shipping_data_id, images_attributes: [:image])
+    #params.require(:item).permit(:name, :explanation, :price, :category_id, :state_id, :shipping_charge_id, :region_id, :shipping_data_id, {image:[]})
     #仮置きなのであとで書き直し
     #return item_params
   end

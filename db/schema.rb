@@ -10,26 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191104065038) do
+ActiveRecord::Schema.define(version: 20191104180739) do
 
-  create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "user_id",    null: false
-    t.string   "postal",     null: false
-    t.string   "region",     null: false
-    t.string   "city",       null: false
-    t.string   "address",    null: false
-    t.string   "building",   null: false
+  create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_addresses_on_user_id", using: :btree
+    t.string   "ancestry"
+    t.string   "name",       null: false
   end
 
   create_table "images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "url",        null: false
-    t.integer  "item_id",    null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "url",        default: "", null: false
+    t.integer  "item_id",                 null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.string   "image"
     t.index ["item_id"], name: "index_images_on_item_id", using: :btree
+  end
+
+  create_table "item_images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "item_id"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+    t.string   "image",      limit: 11
+    t.index ["item_id"], name: "index_item_images_on_item_id", using: :btree
   end
 
   create_table "items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -48,6 +52,8 @@ ActiveRecord::Schema.define(version: 20191104065038) do
     t.datetime "updated_at",                       null: false
     t.string   "image"
     t.text     "explanation",        limit: 65535
+    t.integer  "buyer_id"
+    t.integer  "seller_id"
     t.index ["bland_id"], name: "index_items_on_bland_id", using: :btree
     t.index ["category_id"], name: "index_items_on_category_id", using: :btree
     t.index ["region_id"], name: "index_items_on_region_id", using: :btree
@@ -88,7 +94,6 @@ ActiveRecord::Schema.define(version: 20191104065038) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
-  add_foreign_key "item_images", "items"
-  add_foreign_key "addresses", "users"
   add_foreign_key "images", "items"
+  add_foreign_key "item_images", "items"
 end

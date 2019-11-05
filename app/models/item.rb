@@ -1,8 +1,9 @@
 class Item < ApplicationRecord
   belongs_to :category, optional: true
-  has_many :item_images, dependent: :destroy
-  accepts_nested_attributes_for :item_images
-  mount_uploader :image, ImageUploader
+  belongs_to :seller, class_name: "User"
+  belongs_to :buyer, class_name: "User"
+  has_many :images, dependent: :destroy
+  accepts_nested_attributes_for :images
   enum shipping_data_id: { "---": 0, "1~2日で発送": 1, "2~3日で発送": 2, "3~4日で発送": 3 },_suffix: true
   enum state_id: { "---": 0, 新品、未使用: 1, 未使用に近い: 2, 目立った傷や汚れなし: 3, やや傷や汚れあり: 4, 傷や汚れあり: 5, 全体的に状態が悪い: 6},_suffix: true
   enum region_id:{
@@ -20,5 +21,6 @@ class Item < ApplicationRecord
 
   enum shipping_charge_id: { "---": 0, "送料込み（出品者負担）": 1, "着払い（購入者負担）": 2 },_suffix: true
   enum category_id: {"---": 0, レディース: 1, メンズ: 2, ベビーキッズ: 3},_suffix: true 
+  
   
 end
