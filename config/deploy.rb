@@ -36,15 +36,15 @@ namespace :deploy do
     invoke 'unicorn:restart'
   end
 
-  task :db_reset do
-    on roles(:app) do
-      within release_path do
-        with rails_env: fetch(:rails_env) do
-          execute :rake, "db:migrate:reset"
-        end
-      end
-    end
-  end
+  #   task :db_reset do
+  #   on roles(:app) do
+  #     within release_path do
+  #       with rails_env: fetch(:rails_env) do
+  #         execute :rake, "db:migrate:reset", "DISABLE_DATABASE_ENVIRONMENT_CHECK=1"
+  #       end
+  #     end
+  #   end
+  # end
 
   desc 'upload secrets.yml'
   task :upload do
@@ -56,6 +56,5 @@ namespace :deploy do
     end
   end
   before :starting, 'deploy:upload'
-  before :starting, 'db:migrate:reset'
   after :finishing, 'deploy:cleanup'
 end
