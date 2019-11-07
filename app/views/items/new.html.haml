@@ -54,6 +54,7 @@
             .sell-form__shipping-left__upper
               %h3 発送元の地域
               %span 必須
+            //= f.collection_select :region_id, Prefecture.all, :id, :name, class: 'sell-form__shipping-left__lower'
             = f.select :region_id, Item.region_ids.keys, {}, {class: 'sell-form__shipping-left__lower'}
             .sell-form__shipping-left__upper
               %h3 発送までの日数
