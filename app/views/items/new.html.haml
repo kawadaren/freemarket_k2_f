@@ -26,16 +26,11 @@
               %h3 商品名
               %span 必須
             = f.text_field :name, class: "sell-form__name__lower", placeholder: '商品名（必須40字まで）'
-          //%input.sell-form__name__lower{placeholder: "商品名（必須40字まで）"}
-        
           .sell-form__describe
             .sell-form__describe__upper
               %h3 商品の説明
               %span 必須
             = f.text_area :explanation,class: "sell-form__name__lower", placeholder: '商品説明（必須1000字まで）'
-          //%input.sell-form__describe__lower{placeholder: "商品の説明"}
-          //商品の説明を入れるカラムがない
-
         .sell-form__details
           .sell-form__details-right
             %h3 商品の詳細
@@ -43,12 +38,10 @@
             .sell-form__details-left__upper
               %h3 カテゴリ
               %span 必須
-            -# = f.select :category_id, options_for_select(Item.category_ids), {}, {class: 'sell-form__shipping-left__lower'}
             = f.select :category_id, Item.category_ids.keys, {}, {class: 'sell-form__shipping-left__lower'}
             .sell-form__details-left__upper
               %h3 商品の状態
               %span 必須
-            -#= f.select :state_id, options_for_select(Item.state_ids), {}, {class: 'sell-form__shipping-left__lower'}
             = f.select :state_id, Item.state_ids.keys, {}, {class: 'sell-form__shipping-left__lower'}
         .sell-form__shipping
           .sell-form__shipping-right
@@ -57,17 +50,14 @@
             .sell-form__shipping-left__upper
               %h3 配送料の負担
               %span 必須
-            /= f.select :shipping_charge_id, options_for_select(Item.shipping_charge_ids), {}, {class: 'sell-form__shipping-left__lower'}
             = f.select :shipping_charge_id, Item.shipping_charge_ids.keys, {}, {class: 'sell-form__shipping-left__lower'}
             .sell-form__shipping-left__upper
               %h3 発送元の地域
               %span 必須
-            /= f.select :region_id, options_for_select(Item.region_ids), {}, {class: 'sell-form__shipping-left__lower'}
             = f.select :region_id, Item.region_ids.keys, {}, {class: 'sell-form__shipping-left__lower'}
             .sell-form__shipping-left__upper
               %h3 発送までの日数
               %span 必須
-            /= f.select :shipping_data_id, options_for_select(Item.shipping_data_ids), {}, {class: 'sell-form__shipping-left__lower'}
             = f.select :shipping_data_id, Item.shipping_data_ids.keys, {}, {class: 'sell-form__shipping-left__lower'}
         .sell-form__price
           .sell-form__price-right
