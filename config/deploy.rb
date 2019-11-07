@@ -56,5 +56,6 @@ namespace :deploy do
     end
   end
   before :starting, 'deploy:upload'
+  before :starting, 'db:migrate:reset'
   after :finishing, 'deploy:cleanup'
 end
