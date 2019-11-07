@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191104180739) do
+ActiveRecord::Schema.define(version: 20191105074725) do
 
   create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.datetime "created_at", null: false
@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(version: 20191104180739) do
     t.text     "explanation",        limit: 65535
     t.integer  "buyer_id"
     t.integer  "seller_id"
+    t.integer  "status_id"
     t.index ["bland_id"], name: "index_items_on_bland_id", using: :btree
     t.index ["category_id"], name: "index_items_on_category_id", using: :btree
     t.index ["region_id"], name: "index_items_on_region_id", using: :btree

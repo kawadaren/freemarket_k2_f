@@ -15,7 +15,7 @@
               %p 最大10枚までアップロードできます
           .sell-form__upload__items
             = f.fields_for :images do |m|
-              = m.file_field :image, multiple: true, class: 'hidden', type: 'file', name: "images[image][]"
+              = m.file_field :image, multiple: true, class: 'hidden', type: 'file'
             .sell-form__upload__items-text
               ドラッグアンドドロップ<br>
               またはクリックしてファイルをアップロード
@@ -32,7 +32,7 @@
             .sell-form__describe__upper
               %h3 商品の説明
               %span 必須
-            = f.text_area :explanation, class: "sell-form__name__lower", placeholder: '商品説明（必須1000字まで）'
+            = f.text_area :explanation,class: "sell-form__name__lower", placeholder: '商品説明（必須1000字まで）'
           //%input.sell-form__describe__lower{placeholder: "商品の説明"}
           //商品の説明を入れるカラムがない
 
@@ -80,7 +80,7 @@
               %span 必須
             .sell-form__price-left__input
               %h5 ¥
-              = f.text_field :price, class: "sell-form__price-left__input__form", placeholder: '"例）300"'
+              = f.text_field :price, class: "sell-form__price-left__input__form", id: "a", placeholder: '"例）300"'
             .sell-form__price-left__middle
               販売手数料(10%)
             .sell-form__price-left__bottom

@@ -1,7 +1,8 @@
 class Item < ApplicationRecord
   belongs_to :category, optional: true
-  belongs_to :seller, class_name: "User"
-  belongs_to :buyer, class_name: "User"
+  belongs_to :seller, class_name: "User", optional: true
+  belongs_to :buyer, class_name: "User", optional: true
+
   has_many :images, dependent: :destroy
   accepts_nested_attributes_for :images
   enum shipping_data_id: { "---": 0, "1~2日で発送": 1, "2~3日で発送": 2, "3~4日で発送": 3 },_suffix: true
@@ -20,7 +21,15 @@ class Item < ApplicationRecord
   }
 
   enum shipping_charge_id: { "---": 0, "送料込み（出品者負担）": 1, "着払い（購入者負担）": 2 },_suffix: true
-  enum category_id: {"---": 0, レディース: 1, メンズ: 2, ベビーキッズ: 3},_suffix: true 
-  
-  
+  enum category_id: {"---": 0, レディース: 1, メンズ: 2, ベビーキッズ: 3, インテリア・住まい・小物: 4, 本・音楽・ゲーム: 5, おもちゃ・ホビー・グッズ: 6, コスメ・香水・美容: 7, 家電・スマホ・カメラ: 8, スポーツ・レジャー: 9, ハンドメイド: 10, チケット: 11, 自動車・オートバイ: 12, その他: 13},_suffix: true 
+  enum status_id: { stoped: 0, selling: 1, trading: 2, selled: 3 }
+  # stoped(出品停止), selling(出品中), trading(取引中), selled(売却済)
+
+  def item_status!
+    if selling?
+      trading!
+    else
+      selling!
+    end
+  end
 end
