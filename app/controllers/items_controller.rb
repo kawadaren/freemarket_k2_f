@@ -12,26 +12,19 @@ class ItemsController < ApplicationController
   end
 
   def create
-    
     @item = Item.new(item_params)
     if @item.save
       @item.selling! unless @item.selling?
-      redirect_to controller: 'users', action: 'show', id: 1 #仮置きでidを１にしている
-      
+      redirect_to root_path #仮置きでidを１にしている
     else
       render :new
     end
-    
   end 
 
-  
-
   def show
+   
   end
- 
-  
-  
-  
+
 private
   def item_params
     params.require(:item).permit(:name, :explanation, :price, :category_id, :state_id, :shipping_charge_id, :region_id, :shipping_data_id, images_attributes: {image:[]})
