@@ -15,7 +15,7 @@
               %p 最大10枚までアップロードできます
           .sell-form__upload__items
             = f.fields_for :images do |m|
-              = m.file_field :image, multiple: true, class: 'hidden', type: 'file'
+              = m.file_field :image, multiple: true, class: 'hidden', type: 'file', name: "images[image][]"
             .sell-form__upload__items-text
               ドラッグアンドドロップ<br>
               またはクリックしてファイルをアップロード

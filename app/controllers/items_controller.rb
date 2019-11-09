@@ -14,6 +14,9 @@ class ItemsController < ApplicationController
   def create
     @item = Item.new(item_params)
     if @item.save
+      params[:images]['image'].each do |a|
+        @image = @item.images.create!(image: a)
+      end
       @item.selling! unless @item.selling?
       redirect_to root_path #仮置きでidを１にしている
     else
@@ -27,7 +30,7 @@ class ItemsController < ApplicationController
 
 private
   def item_params
-    params.require(:item).permit(:name, :explanation, :price, :category_id, :state_id, :shipping_charge_id, :region_id, :shipping_data_id, images_attributes: {image:[]})
+    params.require(:item).permit(:name, :explanation, :price, :category_id, :state_id, :shipping_charge_id, :region_id, :shipping_data_id, images_attributes: [:image])
   end
 
 end
