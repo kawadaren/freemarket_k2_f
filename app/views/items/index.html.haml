@@ -28,15 +28,15 @@
           人気の商品写真
         .item-images__text__right
           もっと見る
-      - @items.each do |item|
+      - @images.zip(@items) do |item, i|
         .item-image
           .item-image__box
-            //= image_tag item.image, alt: 'item.name', height:'188', width: '188'
+            = image_tag item.image,height:'188', width: '188'
           %span.item-image__price
             ¥
-            = item.price
+            = i.price
           %span.item-image__name
-            = item.name
+            = i.name
         
      
 

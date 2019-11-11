@@ -2,10 +2,9 @@ class ItemsController < ApplicationController
   before_action :item_status, only: [:item_status]
   def index
     @items = Item.order("id DESC").limit(10)
+    @images = Image.group(:item_id).order("item_id DESC").limit(10)
   end
-  #item_imageコントローラ作ったのでこの記述は消去し、直すこと(item_imageコントローラーに)
-  # 一覧表示は後回しにするので↑一旦置いておく
-  
+ 
   def new
     @item = Item.new
     @image = @item.images.build
@@ -15,10 +14,10 @@ class ItemsController < ApplicationController
     @item = Item.new(item_params)
     if @item.save
       params[:images]['image'].each do |a|
-        @image = @item.images.create!(image: a)
+        @image = @item.images.create(image: a)
       end
       @item.selling! unless @item.selling?
-      redirect_to root_path #仮置きでidを１にしている
+      redirect_to root_path 
     else
       render :new
     end
