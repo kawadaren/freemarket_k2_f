@@ -54,7 +54,6 @@
             .sell-form__shipping-left__upper
               %h3 発送元の地域
               %span 必須
-            //= f.collection_select :region_id, Prefecture.all, :id, :name, class: 'sell-form__shipping-left__lower'
             = f.select :region_id, Item.region_ids.keys, {}, {class: 'sell-form__shipping-left__lower'}
             .sell-form__shipping-left__upper
               %h3 発送までの日数
@@ -74,9 +73,10 @@
               = f.text_field :price, class: "sell-form__price-left__input__form", id: "a", placeholder: '"例）300"'
             .sell-form__price-left__middle
               販売手数料(10%)
+              .sell-form__price-left__middle__output
             .sell-form__price-left__bottom
               販売利益
-
+              .sell-form__price-left__bottom__output
         .sell-form__footer
           .sell-form__footer-text
             %a{}>禁止されている出品
@@ -90,12 +90,11 @@
             また、出品をもちまして
             %a{}>加盟店規約
             に同意したことになります。
-          .sell-form__footer-sellbtn
-            = f.submit "出品する"
-
-          .sell-form__footer-backbtn
-            もどる
+          = f.submit "出品する", class: "sell-form__footer-sellbtn"
+          = link_to "https://www.mercari.com/jp/" do
+            .sell-form__footer-backbtn
+              もどる
+            
   
   = render 'users/footer_simple'
 
-//form_forを1つにして、f.をうまい具合につけていくとエラーなくなるはず
