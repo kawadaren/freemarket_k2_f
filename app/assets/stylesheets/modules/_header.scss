@@ -91,6 +91,14 @@
           }
         }
       }
+      &__menu{
+        a {
+          text-decoration: none;
+          &:visited{
+            color: black;
+          }
+        }
+      }
     }
   }
 }

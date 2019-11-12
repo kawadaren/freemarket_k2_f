@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
 
+  get 'creditcard/new'
+
+  get 'creditcard/show'
+
   devise_for :users
   root 'items#index'
-
 
 
   resources :items, only: [:index, :new, :show] do
@@ -16,8 +19,8 @@ Rails.application.routes.draw do
         get 'tel'
         get 'address'
         get 'pay'
+        post 'save'
         get 'comp'
-        get 'regist_user'
       end
     end
   end
@@ -29,4 +32,6 @@ Rails.application.routes.draw do
       get 'addcreditcard'
     end
   end
+
+
 end

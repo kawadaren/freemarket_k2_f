@@ -20,27 +20,27 @@
         .progress-status.progress5
 
 .input_tell
-  .main
-    .main_zone
-      .input_form
-        %h2.input_registration 電話番号の確認
-        .input_inner
-          .input_content
+  = form_for @user, url: address_users_sign_up_index_path, method: :get do |f|
+    .main
+      .main_zone
+        .input_form
+          %h2.input_registration 電話番号の確認
+          .input_inner
+            .input_content
 
-            .form_group
-              .input_form_default
-                %h3 携帯電話の番号
-              %input.add_info{placeholder: "携帯電話の番号を入力"}
+              .form_group
+                .input_form_default
+                  %h3
+                    = f.label :phone_number, "携帯電話の番号"
+                = f.text_field :phone_number, class: "add_info", placeholder: "携帯電話の番号を入力"
 
-            %p
-              本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
-            %p
-            = link_to address_users_sign_up_index_path do
-              %button.btn_red
-                %span 次へ進む
+              %p
+                本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
+              %p
+              = f.submit '次へ進む', class: 'btn_red'
 
-            ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
-          .text_right
-            = link_to '本人情報の登録について>'
+              ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
+            .text_right
+              = link_to '本人情報の登録について>'
 
 = render 'users/footer_simple'

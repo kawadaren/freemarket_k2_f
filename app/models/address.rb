@@ -5,6 +5,6 @@ class Address < ApplicationRecord
   include JpPrefecture
   jp_prefecture :region
 
-  belongs_to :user
+  belongs_to :user, inverse_of: :address
 
 end

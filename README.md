@@ -188,8 +188,8 @@
 ## creditcardテーブル
 |Column|Type|Options|
 |------|----|-------|
-|customer|integer|null: false|
-|card|integer|null: false|
+|customer_id|string|null: false|
+|card_id|string|null: false|
 |user|reference|null: false, foreign_key: true|
 
 ### Association

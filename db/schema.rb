@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191102114948) do
+ActiveRecord::Schema.define(version: 20191112001939) do
 
   create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "postal",      null: false
@@ -25,6 +25,51 @@ ActiveRecord::Schema.define(version: 20191102114948) do
     t.string   "family_kana", null: false
     t.string   "name_kana",   null: false
     t.string   "tel_number"
+    t.integer  "user_id",     null: false
+    t.index ["user_id"], name: "index_addresses_on_user_id", using: :btree
+  end
+
+  create_table "creditcards", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "user_id",     null: false
+    t.string   "customer_id", null: false
+    t.string   "card_id",     null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["user_id"], name: "index_creditcards_on_user_id", using: :btree
+  end
+
+  create_table "images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "url",        null: false
+    t.integer  "item_id",    null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_images_on_item_id", using: :btree
+  end
+
+  create_table "items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name",               null: false
+    t.integer  "price",              null: false
+    t.integer  "category_id",        null: false
+    t.integer  "state_id",           null: false
+    t.integer  "size_id",            null: false
+    t.integer  "bland_id",           null: false
+    t.integer  "report_id",          null: false
+    t.integer  "region_id",          null: false
+    t.integer  "shipping_data_id",   null: false
+    t.integer  "shipping_method_id", null: false
+    t.integer  "shipping_charge_id", null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "image"
+    t.index ["bland_id"], name: "index_items_on_bland_id", using: :btree
+    t.index ["category_id"], name: "index_items_on_category_id", using: :btree
+    t.index ["region_id"], name: "index_items_on_region_id", using: :btree
+    t.index ["report_id"], name: "index_items_on_report_id", using: :btree
+    t.index ["shipping_charge_id"], name: "index_items_on_shipping_charge_id", using: :btree
+    t.index ["shipping_data_id"], name: "index_items_on_shipping_data_id", using: :btree
+    t.index ["shipping_method_id"], name: "index_items_on_shipping_method_id", using: :btree
+    t.index ["size_id"], name: "index_items_on_size_id", using: :btree
+    t.index ["state_id"], name: "index_items_on_state_id", using: :btree
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -37,9 +82,9 @@ ActiveRecord::Schema.define(version: 20191102114948) do
     t.datetime "updated_at",                          null: false
     t.string   "image"
     t.string   "payment"
-    t.integer  "selling",                             null: false
-    t.integer  "profit",                              null: false
-    t.integer  "point",                               null: false
+    t.integer  "selling"
+    t.integer  "profit"
+    t.integer  "point"
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
@@ -51,4 +96,7 @@ ActiveRecord::Schema.define(version: 20191102114948) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "addresses", "users"
+  add_foreign_key "creditcards", "users"
+  add_foreign_key "images", "items"
 end

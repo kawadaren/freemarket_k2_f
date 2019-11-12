@@ -2,7 +2,7 @@
   %nav.side-bar-nav
     %ul.menu.top
       %li
-        = link_to "https://www.mercari.com/jp/", class: "list-item active" do
+        = link_to user_path(current_user.id), class: "list-item active" do
           マイページ
           = fa_icon 'angle-right', class: "icon-arrow-right"
       = render "users/shared/side_bar_item", name: "お知らせ"
@@ -34,5 +34,9 @@
       = render "users/shared/side_bar_item", name: "メール/パスワード"
       = render "users/shared/side_bar_item", name: "本人情報"
       = render "users/shared/side_bar_item", name: "電話番号の確認"
-      = render "users/shared/side_bar_item", name: "ログアウト"
+      %li
+        = link_to logout_user_path(current_user.id), class: "list-item" do
+          ログアウト
+          = fa_icon 'angle-right', class: "icon-arrow-right"
+      -# = render "users/shared/side_bar_item", name: "ログアウト"
 
