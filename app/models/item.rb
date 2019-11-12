@@ -25,6 +25,11 @@ class Item < ApplicationRecord
   enum status_id: { stoped: 0, selling: 1, trading: 2, selled: 3 }
   # stoped(出品停止), selling(出品中), trading(取引中), selled(売却済)
 
+  validates :image, :name, :price, presence: true
+  validates :name, length: {maximum: 40}, presence: true
+  validates :explanation, length: {maximum: 1000}, presence: true
+  #validates :category_id, :state_id, :region_id, :shipping_charge_id, numericality: {greater_than: 0}, presence: true
+
   def item_status!
     if selling?
       trading!
