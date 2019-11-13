@@ -26,8 +26,8 @@ set :default_env, {
   path: "/usr/local/rbenv/shims:/usr/local/rbenv/bin:$PATH",
   AWS_ACCESS_KEY_ID: ENV["AWS_ACCESS_KEY_ID"],
   AWS_SECRET_ACCESS_KEY: ENV["AWS_SECRET_ACCESS_KEY"],
-  USERNAME: ENV["BASIC_AUTH_USER"],
-  PASSWORD: ENV["BASIC_AUTH_PASSWORD"]
+  BASIC_AUTH_USER: ENV["BASIC_AUTH_USER"],
+  BASIC_AUTH_PASSWORD: ENV["BASIC_AUTH_PASSWORD"]
 }
 # デプロイ処理が終わった後、Unicornを再起動するための記述
 after 'deploy:publishing', 'deploy:restart'
@@ -35,6 +35,16 @@ namespace :deploy do
   task :restart do
     invoke 'unicorn:restart'
   end
+
+  #   task :db_reset do
+  #   on roles(:app) do
+  #     within release_path do
+  #       with rails_env: fetch(:rails_env) do
+  #         execute :rake, "db:migrate:reset", "DISABLE_DATABASE_ENVIRONMENT_CHECK=1"
+  #       end
+  #     end
+  #   end
+  # end
 
   desc 'upload secrets.yml'
   task :upload do

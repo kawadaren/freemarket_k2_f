@@ -20,7 +20,6 @@
           = image_tag 'sumaho.png', alt: 'メルカリスマホ写真', height: "390"
       .slide-item__camp
 
-    //スライドは後回しにしている。キャンプの写真の裏に隠れるように現在配置している
 
   .item-categori
     人気の商品一覧
@@ -32,15 +31,15 @@
           人気の商品写真
         .item-images__text__right
           もっと見る
-      -# - @items.each do |item|
-      -#   .item-image
-      -#     .item-image__box
-      -#       = image_tag item.image, alt: 'ショートコート', height:'188', width: '188'
-      -#     %span.item-image__price
-      -#       ¥
-      -#       = item.price
-      -#     %span.item-image__name
-      -#       = item.name
+      - @images.zip(@items) do |item, i|
+        .item-image
+          .item-image__box
+            = image_tag item.image,height:'188', width: '188'
+          %span.item-image__price
+            ¥
+            = i.price
+          %span.item-image__name
+            = i.name
 
 
 

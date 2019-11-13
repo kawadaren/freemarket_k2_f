@@ -47,20 +47,24 @@ ActiveRecord::Schema.define(version: 20191112001939) do
   end
 
   create_table "items", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "name",               null: false
-    t.integer  "price",              null: false
-    t.integer  "category_id",        null: false
-    t.integer  "state_id",           null: false
-    t.integer  "size_id",            null: false
-    t.integer  "bland_id",           null: false
-    t.integer  "report_id",          null: false
-    t.integer  "region_id",          null: false
-    t.integer  "shipping_data_id",   null: false
-    t.integer  "shipping_method_id", null: false
-    t.integer  "shipping_charge_id", null: false
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
+    t.string   "name"
+    t.integer  "price"
+    t.integer  "category_id"
+    t.integer  "state_id"
+    t.integer  "size_id"
+    t.integer  "bland_id"
+    t.integer  "report_id"
+    t.integer  "region_id"
+    t.integer  "shipping_data_id"
+    t.integer  "shipping_method_id"
+    t.integer  "shipping_charge_id"
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
     t.string   "image"
+    t.text     "explanation",        limit: 65535
+    t.integer  "buyer_id"
+    t.integer  "seller_id"
+    t.integer  "status_id"
     t.index ["bland_id"], name: "index_items_on_bland_id", using: :btree
     t.index ["category_id"], name: "index_items_on_category_id", using: :btree
     t.index ["region_id"], name: "index_items_on_region_id", using: :btree

@@ -1,98 +1,100 @@
 .body
   .header
-    = image_tag 'merucari-logo.svg', alt: 'メルカリのロゴ', width: '185', height: '49'
+    = image_tag 'merucari-logo.svg', alt: 'メルカリのロゴ', width: '185', height: '49' 
   .main
-    .sell-form
-      .sell-form__header
-        %h2 商品の情報を入力
-      .sell-form__upload
-        .sell-form__upload__head
-          .sell-form__upload__head-upper
-            %h3 出品画像
-            %span 必須
-          .sell-form__upload__head-lower
-            %p 最大10枚までアップロードできます
-        .sell-form__upload__items
-          .sell-form__upload__items-text
-            ドラッグアンドドロップ<br>
-            またはクリックしてファイルをアップロード
+    = form_for @item do |f|
+      .sell-form
+        .sell-form__header
+          %h2 商品の情報を入力
+        .sell-form__upload
+          .sell-form__upload__head
+            .sell-form__upload__head-upper
+              %h3 出品画像
+              %span 必須
+            .sell-form__upload__head-lower
+              %p 最大10枚までアップロードできます
+          .sell-form__upload__items
+            = f.fields_for :images do |m|
+              = m.file_field :image, multiple: true, class: 'hidden', type: 'file', name: "images[image][]"
+            .sell-form__upload__items-text
+              ドラッグアンドドロップ<br>
+              またはクリックしてファイルをアップロード
       
-      .sell-form__item
-        .sell-form__name
-          .sell-form__name__upper
-            %h3 商品名
-            %span 必須
-          %input.sell-form__name__lower{placeholder: "商品名（必須40字まで）"}
-        
-        .sell-form__describe
-          .sell-form__describe__upper
-            %h3 商品の説明
-            %span 必須
-          %input.sell-form__describe__lower{placeholder: "商品の説明"}
-        
-      .sell-form__details
-        .sell-form__details-right
-          %h3 商品の詳細
-        .sell-form__details-left
-          .sell-form__details-left__upper
-            %h3 カテゴリ
-            %span 必須
-          %input.sell-form__details-left__lower{placeholder: "---"}
-          .sell-form__details-left__upper
-            %h3 商品の状態
-            %span 必須
-          %input.sell-form__details-left__lower{placeholder: "---"}
-        
-      .sell-form__shipping
-        .sell-form__shipping-right
-          %h3 配送について
-        .sell-form__shipping-left
-          .sell-form__shipping-left__upper
-            %h3 配送料の負担
-            %span 必須
-          %input.sell-form__shipping-left__lower{placeholder: "---"}
-          .sell-form__shipping-left__upper
-            %h3 発送元の地域
-            %span 必須
-          %input.sell-form__shipping-left__lower{placeholder: "---"}
-          .sell-form__shipping-left__upper
-            %h3 発送までの日数
-            %span 必須
-          %input.sell-form__shipping-left__lower{placeholder: "---"}
-      
-      .sell-form__price
-        .sell-form__price-right
-          %h3 販売価格(300〜9,999,999)
-          .sell-form__price-right__question
-            ?
-        .sell-form__price-left
-          .sell-form__price-left__top
-            %h3 価格
-            %span 必須
-          .sell-form__price-left__input
-            %h5 ¥
-            %input.sell-form__price-left__input__form{placeholder: "例）300"}
-          .sell-form__price-left__middle
-            販売手数料
-          .sell-form__price-left__bottom
-            販売利益
-
-      .sell-form__footer
-        .sell-form__footer-text
-          %a{}>禁止されている出品
-          、
-          %a{}>行為
-          を必ずご確認ください。<br>
-          %p
-          またブランド品でシリアルナンバー等がある場合はご記載ください。
-          %a{}>偽ブランドの販売  
-          は犯罪であり処罰される可能性があります。<br>
-          また、出品をもちまして
-          %a{}>加盟店規約
-          に同意したことになります。
-        .sell-form__footer-sellbtn
-          出品する
-        .sell-form__footer-backbtn
-          もどる
+        .sell-form__item
+          .sell-form__name
+            .sell-form__name__upper
+              %h3 商品名
+              %span 必須
+            = f.text_field :name, class: "sell-form__name__lower", placeholder: '商品名（必須40字まで）'
+          .sell-form__describe
+            .sell-form__describe__upper
+              %h3 商品の説明
+              %span 必須
+            = f.text_area :explanation,class: "sell-form__name__lower", placeholder: '商品説明（必須1000字まで）'
+        .sell-form__details
+          .sell-form__details-right
+            %h3 商品の詳細
+          .sell-form__details-left
+            .sell-form__details-left__upper
+              %h3 カテゴリ
+              %span 必須
+            = f.select :category_id, Item.category_ids.keys, {}, {class: 'sell-form__shipping-left__lower'}
+            .sell-form__details-left__upper
+              %h3 商品の状態
+              %span 必須
+            = f.select :state_id, Item.state_ids.keys, {}, {class: 'sell-form__shipping-left__lower'}
+        .sell-form__shipping
+          .sell-form__shipping-right
+            %h3 配送について
+          .sell-form__shipping-left
+            .sell-form__shipping-left__upper
+              %h3 配送料の負担
+              %span 必須
+            = f.select :shipping_charge_id, Item.shipping_charge_ids.keys, {}, {class: 'sell-form__shipping-left__lower'}
+            .sell-form__shipping-left__upper
+              %h3 発送元の地域
+              %span 必須
+            = f.select :region_id, Item.region_ids.keys, {}, {class: 'sell-form__shipping-left__lower'}
+            .sell-form__shipping-left__upper
+              %h3 発送までの日数
+              %span 必須
+            = f.select :shipping_data_id, Item.shipping_data_ids.keys, {}, {class: 'sell-form__shipping-left__lower'}
+        .sell-form__price
+          .sell-form__price-right
+            %h3 販売価格(300〜9,999,999)
+            .sell-form__price-right__question
+              ?
+          .sell-form__price-left
+            .sell-form__price-left__top
+              %h3 価格
+              %span 必須
+            .sell-form__price-left__input
+              %h5 ¥
+              = f.text_field :price, class: "sell-form__price-left__input__form", id: "a", placeholder: '"例）300"'
+            .sell-form__price-left__middle
+              販売手数料(10%)
+              .sell-form__price-left__middle__output
+            .sell-form__price-left__bottom
+              販売利益
+              .sell-form__price-left__bottom__output
+        .sell-form__footer
+          .sell-form__footer-text
+            %a{}>禁止されている出品
+            、
+            %a{}>行為
+            を必ずご確認ください。<br>
+            %p
+            またブランド品でシリアルナンバー等がある場合はご記載ください。
+            %a{}>偽ブランドの販売  
+            は犯罪であり処罰される可能性があります。<br>
+            また、出品をもちまして
+            %a{}>加盟店規約
+            に同意したことになります。
+          = f.submit "出品する", class: "sell-form__footer-sellbtn"
+          = link_to root_path do
+            .sell-form__footer-backbtn
+              もどる
+            
   
   = render 'users/footer_simple'
+

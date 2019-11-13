@@ -25,6 +25,13 @@ Rails.application.routes.draw do
     end
   end
 
+
+  resources :items, only: [:index, :new, :show, :create] do
+    get 'buyconfirm'
+  end
+
+
+
   resources :users, only: [:index, :edit, :show] do
     member do
       get 'logout'
