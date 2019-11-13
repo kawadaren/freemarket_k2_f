@@ -6,10 +6,11 @@
     padding: 0;
     background-repeat: no-repeat;
     display: block;
+
     .main_zone {
-    width: 456px;
-    margin: 0 auto;
-    background-color: #fff;
+      width: 456px;
+      margin: 0 auto;
+      background-color: #fff;
       .no_account_login {
         padding: 40px 64px;
         text-align: center;
@@ -31,7 +32,7 @@
         border-top: 1px solid #eee;
         padding: 32px 64px;
         margin: 0;
-        
+
         .login_facebook {
           background-color: #385185;
           color: #fff;
@@ -42,78 +43,105 @@
           }
           .contents__btn--icon::before {
             font-size: 26px;
-
-          }
           }
         }
-        .contents__btn--icon::before {
-          font-size: 26px;
-          
-        }
-        }
-
       }
-      .login_google {
-        margin-top:16px;
-        border:#979797 solid 1px;
-        .google_icon {
-          float: left;
-          transform:translate(7px,10px)
-        }
+      .contents__btn--icon::before {
+        font-size: 26px;
       }
-      .sns_login {
-        font-size: 14px;
-        display: block;
-        width: 100%;
-        text-align: center;
-        line-height:48px;
-        text-decoration: none;
-        cursor: pointer;
-      }
-      
     }
-    .login_form {
-      padding: 24px 64px 32px;
-      margin: 0;
-      .input_value {
-        margin-top:24px;
+  }
+  .login_google {
+    margin-top:16px;
+    border:#979797 solid 1px;
+    .google_icon {
+      float: left;
+      transform:translate(7px,10px)
+    }
+  }
+  .sns_login {
+    font-size: 14px;
+    display: block;
+    width: 100%;
+    text-align: center;
+    line-height:48px;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .login_form {
+    padding: 24px 64px 32px;
+    margin: 0;
+    .input_value {
+      margin-top:24px;
+      width: 100%;
+      &:first-child {
+        margin:0;
+      }
+      .input_form {
+        height: 48px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+        background: #fff;
+        line-height: 1.5;
+        font-size: 16px;
         width: 100%;
+
         &:first-child {
           margin:0;
         }
-        .input_form {
-          height: 48px;
-          border-radius: 4px;
-          border: 1px solid #ccc;
-          background: #fff;
-          line-height: 1.5;
-          font-size: 16px;
-          width: 100%;
-
-          &:first-child {
-            margin:0;
-          }
-          .input_form {
-            height: 48px;
-            border-radius: 4px;
-            border: 1px solid #ccc;
-            background: #fff;
-            line-height: 1.5;
-            font-size: 16px;
-            width: 100%;
-
-
-          }
-          input::placeholder {
-            display: block;
-            padding:10px;
-          }
-
+        &:focus{
+          outline: none;
+          border-color: #0099e8;
         }
-        input::placeholder {
-          display: block;
+        // .input_form {
+        //   height: 48px;
+        //   border-radius: 4px;
+        //   border: 1px solid #ccc;
+        //   background: #fff;
+        //   line-height: 1.5;
+        //   font-size: 16px;
+        //   width: 100%;
 
-      } 
+
+        // }
+        // input::placeholder {
+        //   display: block;
+        //   padding:10px;
+        // }
+
+      }
+      input::placeholder {
+        display: block;
+      }
+
+    }
+
+    .login_button {
+      margin: 24px 0 0;
+      background: #ea352d;
+      border: 1px solid #ea352d;
+      color: #fff;
+      .text{
+        background: #ea352d;
+        border: none;
+        color: #fff;
+      }
+    }
+
+
+    .forget_password {
+      text-decoration: none;
+      font-size: 14px;
+      color: #0099e8;
+      display: block;
+      margin-top: 40px;
+      &:hover {
+        text-decoration: underline;
+        width: 100%;
+        font-size:14px;
+        cursor: pointer;
+      }
       .forget_password {
         text-decoration: none;
         font-size: 14px;
@@ -122,25 +150,11 @@
         margin-top: 40px;
         &:hover {
           text-decoration: underline;
-          width: 100%;
-          line-height: 48px;
-          font-size:14px;
-          cursor: pointer;
-          text-align: center;
-        }
-        .forget_password {
-          text-decoration: none;
-          font-size: 14px;
-          color: #0099e8;
-          display: block;
-          margin-top: 40px;
-          &:hover {
-            text-decoration: underline;
-          }
         }
       }
     }
   }
+}
 
 
 

@@ -32,6 +32,9 @@
             .contents__btn--icon::before {
               font-size: 24px;
             }
+            &:focus{
+              outline: none;
+            }
           }
           .login_facebook {
             background-color: #385185;

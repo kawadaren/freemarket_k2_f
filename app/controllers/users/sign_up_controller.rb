@@ -7,19 +7,16 @@ class Users::SignUpController < ApplicationController
   end
 
   def tel
-    binding.pry
     session[:user] = user_params
     @user = User.new(user_params)
   end
 
   def address
-    binding.pry
     session[:user]["phone_number"] = user_params[:phone_number]
     @address = Address.new
   end
 
   def pay
-    binding.pry
     session[:address] = address_params
     @creditcard = Creditcard.new
   end
@@ -28,7 +25,6 @@ class Users::SignUpController < ApplicationController
     @user = User.new(session[:user])
     @user.build_address(session[:address])
     @user.save
-    binding.pry
 
     Payjp.api_key = ENV["PAYJP_PRIVATE_KEY"]
     if params['payjpToken'].blank?
@@ -43,7 +39,6 @@ class Users::SignUpController < ApplicationController
     session[:id] = @user.id
     sign_in User.find(session[:id]) unless user_signed_in?
     redirect_to comp_users_sign_up_index_path
-    binding.pry
   end
 
   private
