@@ -1,4 +1,7 @@
-= render 'shared/header/login'
+- if user_signed_in?
+  = render 'shared/header/login'
+- else
+  = render 'shared/header/logout'
 .pagepath
   %ul
     %li.pass-page
@@ -48,7 +51,6 @@
             .input_form_default
               %h3 都道府県
               %span.optional 任意
-            -# ここはサーバーサイドの時に実装
           .form_group
             .input_form_default
               %h3 市区町村
@@ -70,9 +72,6 @@
           .form_group
             %p.text_right
               = link_to '本人情報の登録について>'
-
-
-
 
 
 = render "shared/sell-btn"

@@ -26,6 +26,12 @@
           &:first-child{
             margin: 0;
           }
+          a {
+            text-decoration: none;
+            &:visited{
+              color: white;
+            }
+          }
         }
       }
     }
