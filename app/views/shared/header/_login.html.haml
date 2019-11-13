@@ -24,8 +24,6 @@
         = fa_icon 'check', class: "lower-header-left__check-btn"
         やることリスト
       .lower-header-left__menu
-        -# = binding.pry
         = link_to user_path(current_user.id) do
           = fa_icon 'user-circle', class: "lower-header-left__mypage-btn"
           マイページ
-        -# /マイページのアイコンは、自分で選んだ画像が表示されるようにする必要あり。今は仮置き
