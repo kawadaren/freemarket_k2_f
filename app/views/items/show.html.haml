@@ -1,5 +1,10 @@
-= render 'shared/header/login' #ヘッダー部分
-.body  
+- if user_signed_in?
+  = render 'shared/header/login'
+- else
+  = render 'shared/header/logout'
+
+
+.body
   .box
     %h1 高知  ショルダーバック
     .box-item
@@ -44,17 +49,17 @@
           .owl-dots
             .owl-dot
               = image_tag 'item.jpg', alt: 'ショートコート', height:'300', width: '300'
-                
+
       %table.item-table
-        %tr 
+        %tr
           %th 出品者
-          %td 
+          %td
             .user 高知家
             .rating
               .user-rating
                 .rating-good
                   = fa_icon 'heart'
-                %span 7 
+                %span 7
               .user-rating
                 .rating-good
                   = fa_icon 'heart'
@@ -63,22 +68,22 @@
                 .rating-good
                   = fa_icon 'heart'
                 %span 8
-        %tr 
+        %tr
           %th カテゴリー
-          %td 
+          %td
             .category
-              レディース 
+              レディース
             .category-sub
               バック
-            .category-sub-sub 
+            .category-sub-sub
               ショルダーバッグ
-        %tr 
+        %tr
           %th ブランド
           %td コーチ
-        %tr 
+        %tr
           %th 商品の状態
           %td 目立った傷なし
-        %tr 
+        %tr
           %th 配送料の負担
           %td 送料込み（出品者負担）
         %tr
@@ -103,7 +108,7 @@
       購入画面に進む
 
     .box-comment-seller
-      %p 
+      %p
         縦26㎝×横27㎝×マチ3.5㎝です。
         財布、ポーチ、スマホなどのお荷物の時に。
         シルバーなのでシーズンを選びません。
@@ -132,7 +137,7 @@
     %textarea{name: "body", type: "text", value: ""}
     .comment-buyer__btn
       コメントする
-  
+
   %ul.item-link
     %li.item-link__left
       =fa_icon 'arrow-left', class: "item-link__icon"
@@ -140,7 +145,7 @@
     %li.item-link__right
       レターパックプラス40枚
       =fa_icon 'arrow-right', class: "item-link__icon"
-      
+
   .sns-box
     %ul.sns-icon
       %li.sns-icon-facebook
@@ -151,7 +156,7 @@
         = image_tag 'LINE_APP.png', alt: 'LINEのアイコン', height: '44', width: '44', class: 'line'
       %li.sns-icon-pintarest
         =fa_icon 'pinterest'
-      
+
   .user-items
     %h2 高知家さんのその他の出品
     .user-item
@@ -210,7 +215,7 @@
               = fa_icon 'heart', class: "item-likes"
               .item-likes__details-count
                 1
-  
+
   .other-items
     %h2 高知家さんのその他の出品
     .other-item
@@ -290,7 +295,7 @@
       %li.pass-page__under
         %span.pass-page__right__under
           高知家ショルダーバック
-      
-    
+
+
 
 = render 'shared/footer'

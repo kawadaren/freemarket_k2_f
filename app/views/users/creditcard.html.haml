@@ -1,4 +1,8 @@
-= render 'shared/header/login'
+ - if user_signed_in?
+  = render 'shared/header/login'
+- else
+  = render 'shared/header/logout'
+
 .pagepath
   %ul
     %li.pass-page

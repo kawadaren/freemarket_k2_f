@@ -9,10 +9,9 @@ class User < ApplicationRecord
          has_many :items, dependent: :destroy
          has_many :goodstamps, dependent: :destroy
          has_many :statuses, dependent: :destroy
-         belongs_to :news
-         belongs_to :report
+         belongs_to :news, optional: true
+         belongs_to :report, optional: true
          has_one :creditcard, dependent: :destroy
-         has_one :address, dependent: :destroy
+         has_one :address, dependent: :destroy, inverse_of: :user
+         accepts_nested_attributes_for :address
 end
-
-#コピーしてきたユーザーの登録から

@@ -1,5 +1,8 @@
 .wrapper
-  = render 'shared/header/logout'
+  - if user_signed_in?
+    = render 'shared/header/login'
+  - else
+    = render 'shared/header/logout'
   .top-image__slider
     .slider-wrapper
       .slide-item-wrap
@@ -16,8 +19,8 @@
           .slide-item__sumaho__right
           = image_tag 'sumaho.png', alt: 'メルカリスマホ写真', height: "390"
       .slide-item__camp
-        
-   
+
+
   .item-categori
     人気の商品一覧
 
@@ -37,8 +40,8 @@
             = i.price
           %span.item-image__name
             = i.name
-        
-     
+
+
 
   = render 'shared/sell-btn'
   = render 'shared/footer'

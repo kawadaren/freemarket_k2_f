@@ -5,7 +5,7 @@
   padding: 8px 0px 0px;
   margin: 0px auto;
   background-color: $white;
-  
+
   .upper-header{
     display: flex;
     &__logo{
@@ -68,6 +68,12 @@
         background-color: $red;
         padding: 0px 10px;
         border-radius: 4px;
+        a {
+          text-decoration: none;
+          &:visited{
+            color: white;
+          }
+        }
       }
       &__login{
         font-size: $base_merucari_font;
@@ -78,8 +84,21 @@
         margin-left: 11px;
         border-radius: 4px;
         border-width: 1px;
+        a {
+          text-decoration: none;
+          &:visited{
+            color: $blue;
+          }
+        }
       }
-      
+      &__menu{
+        a {
+          text-decoration: none;
+          &:visited{
+            color: black;
+          }
+        }
+      }
     }
   }
 }

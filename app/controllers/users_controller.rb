@@ -20,5 +20,4 @@ class UsersController < ApplicationController
 
   def addcreditcard
   end
-
 end
