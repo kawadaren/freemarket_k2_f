@@ -59,7 +59,7 @@
         .progress-status::after {
           background-color: #ea352d;
         }
-        
+
 
 
         .progress1::before {
@@ -121,6 +121,9 @@
                 line-height: 48px;
                 font-size: 14px;
                 cursor: pointer;
+                &:focus{
+                  outline: none;
+                }
               }
               a {
                 text-decoration: none;

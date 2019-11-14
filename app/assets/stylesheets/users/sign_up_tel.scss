@@ -115,17 +115,20 @@
                 }
               }
               .add_info {
-                width: 100%;
+                width: calc(100% - 16px - 16px - 2px);
                 margin: 8px 0 0;
                 height: 30px;
                 padding: 10px 0px 8px 0px;
+                padding: 10px 16px 8px;
                 font-size: 16px;
                 border-radius: 4px;
+                border:  1px solid #ccc;
+                &:focus{
+                  outline: none;
+                  border-color: #0099e8;
+                }
               }
-              input::placeholder {
-                display: block;
-                padding:16px;
-              }
+
             }
             p {
               margin: 8px 0 0;
@@ -146,16 +149,18 @@
             a {
               text-decoration: none;
             }
-            .text_right {
-              margin-top: 32px;
-              a {
-                color: #0099e8;
-                text-decoration: none;
-                cursor: pointer;
-                font-size: 14px;
-                display: block;
-                text-align: right;
-              }
+          }
+          .text_right {
+            max-width: 343px;
+            margin: 0 auto;
+            margin-top: 32px;
+            a {
+              color: #0099e8;
+              text-decoration: none;
+              cursor: pointer;
+              font-size: 14px;
+              display: block;
+              text-align: right;
             }
           }
         }
