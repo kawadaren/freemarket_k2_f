@@ -37,7 +37,7 @@
       - @images.zip(@items) do |item, i|
         .item-image
           .item-image__box
-            = image_tag item.image,height:'188', width: '188'
+            = link_to image_tag(item.image,height:'188', width: '188'), item_path(item)
           %span.item-image__price
             ¥
             = i.price
