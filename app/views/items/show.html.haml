@@ -1,5 +1,10 @@
-= render 'shared/header/login' #ヘッダー部分
-.body  
+- if user_signed_in?
+  = render 'shared/header/login'
+- else
+  = render 'shared/header/logout'
+
+
+.body
   .box
     %h1 
       = @item.name
@@ -48,17 +53,17 @@
           .owl-dots
             .owl-dot
               = image_tag 'item.jpg', alt: 'ショートコート', height:'300', width: '300'
-                
+
       %table.item-table
-        %tr 
+        %tr
           %th 出品者
-          %td 
+          %td
             .user 高知家
             .rating
               .user-rating
                 .rating-good
                   = fa_icon 'heart'
-                %span 7 
+                %span 7
               .user-rating
                 .rating-good
                   = fa_icon 'heart'
@@ -67,9 +72,9 @@
                 .rating-good
                   = fa_icon 'heart'
                 %span 8
-        %tr 
+        %tr
           %th カテゴリー
-          %td 
+          %td
             .category
               = @item.category_id
             .category-sub
@@ -138,7 +143,7 @@
     %textarea{name: "body", type: "text", value: ""}
     .comment-buyer__btn
       コメントする
-  
+
   %ul.item-link
     %li.item-link__left
       =fa_icon 'arrow-left', class: "item-link__icon"
@@ -146,7 +151,7 @@
     %li.item-link__right
       レターパックプラス40枚
       =fa_icon 'arrow-right', class: "item-link__icon"
-      
+
   .sns-box
     %ul.sns-icon
       %li.sns-icon-facebook
@@ -157,7 +162,7 @@
         = image_tag 'LINE_APP.png', alt: 'LINEのアイコン', height: '44', width: '44', class: 'line'
       %li.sns-icon-pintarest
         =fa_icon 'pinterest'
-      
+
   .user-items
     %h2 高知家さんのその他の出品
     .user-item
@@ -216,7 +221,7 @@
               = fa_icon 'heart', class: "item-likes"
               .item-likes__details-count
                 1
-  
+
   .other-items
     %h2 高知家さんのその他の出品
     .other-item
@@ -298,5 +303,7 @@
           = @item.name
       
     
+
+
 
 = render 'shared/footer'

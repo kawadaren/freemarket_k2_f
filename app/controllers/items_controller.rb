@@ -4,7 +4,7 @@ class ItemsController < ApplicationController
     @items = Item.order("id DESC").limit(10)
     @images = Image.group(:item_id).order("item_id DESC").limit(10)
   end
- 
+
   def new
     @item = Item.new
     @image = @item.images.build
@@ -17,11 +17,11 @@ class ItemsController < ApplicationController
         @image = @item.images.create(image: a)
       end
       @item.selling! unless @item.selling?
-      redirect_to root_path 
+      redirect_to root_path
     else
       render :new
     end
-  end 
+  end
 
   def show
    @item = Item.find(params[:id])
@@ -35,4 +35,3 @@ private
 
 end
 
- 

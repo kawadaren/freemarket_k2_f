@@ -1,4 +1,7 @@
-= render 'shared/header/login'
+- if user_signed_in?
+  = render 'shared/header/login'
+- else
+  = render 'shared/header/logout'
 .pagepath
   %ul
     %li.pass-page
@@ -23,7 +26,7 @@
         = form_tag( root_path, method: :get ) do
           .single-content
             %button.single-content--btn
-              ログアウト
+              = link_to "ログアウト", destroy_user_session_path, method: :delete
 
 
 = render "shared/sell-btn"

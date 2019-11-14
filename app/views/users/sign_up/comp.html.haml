@@ -20,7 +20,7 @@
         .progress-status.progress5
 
 
-.input_comp   
+.input_comp
   .main
     .main_zone
       .input_form
@@ -28,13 +28,14 @@
         .input_inner
           .input_content
             .form-group
-              %p 
+              %p
                 ありがとうございます。
                 %br
                   会員登録が完了しました。
             .form-group
-              %button.btn_red
-                メルカリをはじめる
+              = link_to root_path do
+                %button.btn_red
+                  メルカリをはじめる
         .bottom
           .bottom-left
             .bottom-text
@@ -44,7 +45,7 @@
                 今すぐ無料ダウンロード
             .bottom-icon
               .bottom-icon__merucari
-                = image_tag 'merucari-cube.png', alt: 'メルカリアイコン'
+                = image_tag 'merucari_profile.svg', alt: 'メルカリアイコン'
               .bottom-icon__appstore
                 = image_tag 'app-store.svg', alt: 'appstoreアイコン'
               .bottom-icon__googleplay
@@ -55,4 +56,4 @@
 
 
 
-= render 'footer_simple'
+= render 'users/footer_simple'

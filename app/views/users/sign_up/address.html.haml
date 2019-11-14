@@ -1,0 +1,82 @@
+.header-simple
+  %h1
+    = image_tag 'logo.svg', alt: '', height: '49px', width: '185px', class: ''
+  %nav.progress-ber.sign-up
+    %ol.clearfix
+      %li
+        会員情報
+        .progress-status.progress1
+      %li
+        電話番号認証
+        .progress-status.progress2
+      %li.active
+        お届け先住所入力
+        .progress-status.progress3
+      %li
+        支払い情報
+        .progress-status.progress4
+      %li
+        完了
+        .progress-status.progress5
+
+.input_address
+  = form_for @address, url: pay_users_sign_up_index_path, method: :get do |f|
+    .main
+      .main_zone
+        .input_form
+          %h2.input_registration 発送元・お届け先住所入力
+          .input_inner
+            .input_content
+              .form_group
+                .input_form_default
+                  %h3 お名前
+                  %span 必須
+                = f.text_field :family, class: "add_info", placeholder: "例) 山田"
+                = f.text_field :name, class: "add_info", placeholder: "例) 彩"
+              .form_group
+                .input_form_default
+                  %h3 お名前カナ
+                  %span 必須
+                = f.text_field :family_kana, class: "add_info", placeholder: "例) ヤマダ"
+                = f.text_field :name_kana, class: "add_info", placeholder: "例) アヤ"
+              .form_group
+                .input_form_default
+                  %h3
+                    = f.label :postal, "郵便番号"
+                  %span 必須
+                = f.text_field :postal, class: "add_info", placeholder: "例) 123-4567"
+              .form_group
+                .input_form_default
+                  %h3
+                    = f.label :region, "都道府県"
+                  %span 必須
+                = f.collection_select(:region, JpPrefecture::Prefecture.all, :code, :name, {prompt:"都道府県を選択"}, {class: "add_info_select"})
+              .form_group
+                .input_form_default
+                  %h3
+                    = f.label :city, "市区町村"
+                  %span 必須
+                = f.text_field :city, class: "add_info", placeholder: "例) 横浜市緑区"
+              .form_group
+                .input_form_default
+                  %h3
+                    = f.label :address, "番地"
+                  %span 必須
+                = f.text_field :address, class: "add_info", placeholder: "例) 青山1-1-1"
+              .form_group
+                .input_form_default
+                  %h3
+                    = f.label :building, "建物名"
+                  %span.optional 任意
+                = f.text_field :building, class: "add_info", placeholder: "例) 柳ビル103"
+              .form_group
+                .input_form_default
+                  %h3
+                    = f.label :tel_number, "電話"
+                  %span.optional 任意
+                = f.text_field :tel_number, class: "add_info", placeholder: "例) 09012345678"
+              .form_group
+                = f.submit '次へ進む', class: 'btn_red'
+
+
+= render 'users/footer_simple'

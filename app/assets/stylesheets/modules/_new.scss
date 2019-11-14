@@ -188,11 +188,16 @@
           padding: 20px 0px;
           font-size: 14px;
           border-top: 1px solid #CCC;
+          display: flex;
+          justify-content: space-between;
+         
         } 
         &__bottom{
           padding: 20px 0px;
           border-top: 1px solid #CCC;
           font-weight: bold;
+          display: flex;
+          justify-content: space-between;
         }
       }
      }
@@ -206,6 +211,9 @@
         }
       }
       &-sellbtn{
+        cursor: pointer;
+        width: 100%;
+        border-style: none;
         text-align: center;
         margin-top: 40px;
         line-height: 48px;
