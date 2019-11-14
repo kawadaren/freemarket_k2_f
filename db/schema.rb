@@ -29,6 +29,13 @@ ActiveRecord::Schema.define(version: 20191112001939) do
     t.index ["user_id"], name: "index_addresses_on_user_id", using: :btree
   end
 
+  create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "ancestry"
+    t.string   "name",       null: false
+  end
+
   create_table "creditcards", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id",     null: false
     t.string   "customer_id", null: false
@@ -39,10 +46,10 @@ ActiveRecord::Schema.define(version: 20191112001939) do
   end
 
   create_table "images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "url",        null: false
-    t.integer  "item_id",    null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer  "item_id",                 null: false
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.string   "image",      default: "", null: false
     t.index ["item_id"], name: "index_images_on_item_id", using: :btree
   end
 
@@ -74,6 +81,13 @@ ActiveRecord::Schema.define(version: 20191112001939) do
     t.index ["shipping_method_id"], name: "index_items_on_shipping_method_id", using: :btree
     t.index ["size_id"], name: "index_items_on_size_id", using: :btree
     t.index ["state_id"], name: "index_items_on_state_id", using: :btree
+  end
+
+  create_table "regions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "prefecture_id"
+    t.string   "city"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
