@@ -1,8 +1,10 @@
 .wrapper
   - if user_signed_in?
     = render 'shared/header/login'
+    = render 'shared/sell-btn'
   - else
     = render 'shared/header/logout'
+    = render 'shared/not-sell-btn'
   .top-image__slider
     .slider-wrapper
       .slide-item-wrap
@@ -18,6 +20,7 @@
               = image_tag 'googleplay.svg', alt: 'googleplayのアイコン'
           .slide-item__sumaho__right
           = image_tag 'sumaho.png', alt: 'メルカリスマホ写真', height: "390"
+      
       .slide-item__camp
 
 
@@ -41,7 +44,4 @@
           %span.item-image__name
             = i.name
 
-
-
-  = render 'shared/sell-btn'
   = render 'shared/footer'

@@ -131,12 +131,16 @@
     }
     
     &-btn{
-      text-align: center;
-      color: $white;
-      background-color: $red;
-      font-size: 24px;
-      line-height: 60px;
       margin-top: 16px;
+      background-color: $red;
+      text-align: center;
+      line-height: 60px;
+      a {
+        color: $white;
+        font-size: 24px;
+        width:620px;
+        text-decoration: none;
+      }
     }
   
     &-comment-seller{

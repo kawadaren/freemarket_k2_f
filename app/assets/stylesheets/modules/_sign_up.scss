@@ -1,10 +1,13 @@
 .header-simple {
   h1 {
+    float: left;
     display: inline-block;
     margin: 40px 0 0;
     font-size: inherit;
+    // 後でメルカリのロゴ動かす
+    transform:translate(340px,0px);
   }
-  .progress-ber1 {
+  .progress-ber {
     display: inline-block;
     vertical-align: top;
     padding: 40px 0 0 44px;
