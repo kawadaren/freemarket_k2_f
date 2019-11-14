@@ -10,14 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191109094909) do
-
-  create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string   "ancestry"
-    t.string   "name",       null: false
-  end
+ActiveRecord::Schema.define(version: 20191113100413) do
 
   create_table "brands", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",       null: false
@@ -34,11 +27,18 @@ ActiveRecord::Schema.define(version: 20191109094909) do
     t.index ["item_id"], name: "index_buyers_on_item_id", using: :btree
   end
 
+  create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "ancestry"
+    t.string   "name",       null: false
+  end
+
   create_table "images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "item_id",                 null: false
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
-    t.string   "image",      default: "", null: false
+    t.integer  "item_id",    null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "image"
     t.index ["item_id"], name: "index_images_on_item_id", using: :btree
   end
 
@@ -56,7 +56,6 @@ ActiveRecord::Schema.define(version: 20191109094909) do
     t.integer  "shipping_charge_id"
     t.datetime "created_at",                       null: false
     t.datetime "updated_at",                       null: false
-    t.string   "image"
     t.text     "explanation",        limit: 65535
     t.integer  "buyer_id"
     t.integer  "seller_id"
@@ -91,6 +90,13 @@ ActiveRecord::Schema.define(version: 20191109094909) do
     t.index ["seller_id"], name: "index_messages_on_seller_id", using: :btree
   end
 
+  create_table "regions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "prefecture_id"
+    t.string   "city"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
   create_table "reports", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id",    null: false
     t.integer  "item_id",    null: false
@@ -106,37 +112,13 @@ ActiveRecord::Schema.define(version: 20191109094909) do
     t.datetime "updated_at", null: false
     t.index ["item_id"], name: "index_sellers_on_item_id", using: :btree
   end
-  
-  create_table "regions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "prefecture_id"
-    t.string   "city"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-  end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "name",                                null: false
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "phone_number",                        null: false
-    t.integer  "birthday",                            null: false
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
-    t.string   "image"
-    t.string   "payment"
-    t.integer  "selling",                             null: false
-    t.integer  "profit",                              null: false
-    t.integer  "point",                               null: false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.string   "nickname",                            null: false
-    t.string   "name_kana",                           null: false
-    t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "addresses", "users"
   add_foreign_key "brands", "items"
   add_foreign_key "buyers", "items"
   add_foreign_key "images", "items"
@@ -147,5 +129,4 @@ ActiveRecord::Schema.define(version: 20191109094909) do
   add_foreign_key "reports", "items"
   add_foreign_key "reports", "users"
   add_foreign_key "sellers", "items"
-  add_foreign_key "images", "items"
 end

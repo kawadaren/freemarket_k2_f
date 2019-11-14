@@ -10,10 +10,13 @@
             .owl-stage
               .owl-item
                 .owl-item-inner
-                  = @item.image
+                  - @item.images.each do |image|
+                    = image_tag image.image
+                  
               .owl-item
                 .owl-item-inner
-                  = image_tag 'item.jpg', alt: 'ショートコート', height:'300', width: '300'
+                  - @item.images.each do |image|
+                    = image_tag image.image, height:'300', width: '300'
               .owl-item
                 .owl-item-inner
                   = image_tag 'item.jpg', alt: 'ショートコート', height:'300', width: '300'
@@ -68,11 +71,11 @@
           %th カテゴリー
           %td 
             .category
-              レディース 
+              = @item.category_id
             .category-sub
-              バック
+              
             .category-sub-sub 
-              ショルダーバッグ
+              
         %tr 
           %th ブランド
           %td
@@ -106,17 +109,12 @@
       %span.box-price-fee
         送料込み
     .box-btn
-      = link_to @item.status_id, item_item_status_path(@item), method: :patch
-
-      購入画面に進む
+      = link_to "購入画面に進む",root_path
+    
 
     .box-comment-seller
       %p 
-        縦26㎝×横27㎝×マチ3.5㎝です。
-        財布、ポーチ、スマホなどのお荷物の時に。
-        シルバーなのでシーズンを選びません。
-        ベルトの長さを色々調節できるタイプです。
-        安心・安全の高知製です！
+        = @item.explanation
     .box-last
       .box-last__left
         .like
@@ -297,7 +295,7 @@
         = fa_icon 'angle-right', class: "icon-arrow-right"
       %li.pass-page__under
         %span.pass-page__right__under
-          高知家ショルダーバック
+          = @item.name
       
     
 

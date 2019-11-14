@@ -9,9 +9,6 @@ class ItemsController < ApplicationController
     @item = Item.new
     @image = @item.images.build
   end
-  def cretate
-    item = Item.new
-  end
 
   def create
     @item = Item.new(item_params)
@@ -27,8 +24,8 @@ class ItemsController < ApplicationController
   end 
 
   def show
-    @item = Item.find(params[:id])
-   
+   @item = Item.find(params[:id])
+  
   end
 
 private

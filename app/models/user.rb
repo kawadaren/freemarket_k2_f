@@ -14,5 +14,4 @@ class User < ApplicationRecord
          has_one :creditcard, dependent: :destroy
          has_one :address, dependent: :destroy
 end
-
-#コピーしてきたユーザーの登録から
+end
