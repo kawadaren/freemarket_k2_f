@@ -61,12 +61,10 @@ ActiveRecord::Schema.define(version: 20191113100413) do
   end
 
   create_table "images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-
-    t.integer  "item_id",                 null: false
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
-    t.string   "image",      default: "", null: false
-
+    t.integer  "item_id",    null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "image"
     t.index ["item_id"], name: "index_images_on_item_id", using: :btree
   end
 
@@ -99,7 +97,6 @@ ActiveRecord::Schema.define(version: 20191113100413) do
     t.index ["state_id"], name: "index_items_on_state_id", using: :btree
   end
 
-
   create_table "likes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id",    null: false
     t.integer  "item_id",    null: false
@@ -125,7 +122,6 @@ ActiveRecord::Schema.define(version: 20191113100413) do
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
   end
-
 
   create_table "reports", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id",    null: false
