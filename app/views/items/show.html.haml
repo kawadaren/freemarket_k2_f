@@ -13,47 +13,16 @@
         .owl-carousel.owl-loaded.owl-drag
           .owl-stage-outer
             .owl-stage
-              .owl-item
-                .owl-item-inner
-                  - @item.images.each do |image|
-                    = image_tag image.image
-                  
-              .owl-item
-                .owl-item-inner
-                  - @item.images.each do |image|
-                    = image_tag image.image, height:'300', width: '300'
-              .owl-item
-                .owl-item-inner
-                  = image_tag 'item.jpg', alt: 'ショートコート', height:'300', width: '300'
-              .owl-item
-                .owl-item-inner
-                  = image_tag 'item.jpg', alt: 'ショートコート', height:'300', width: '300'
-              .owl-item
-                .owl-item-inner
-                  = image_tag 'item.jpg', alt: 'ショートコート', height:'300', width: '300'
-              .owl-item
-                .owl-item-inner
-                  = image_tag 'item.jpg', alt: 'ショートコート', height:'300', width: '300'
-
+              - @item.images.each do |i|
+                - if i.image.present?
+                  .owl-item
+                    .owl-item-inner
+                      = image_tag i.image,height:'300', width: '300'             
           .owl-dots
-            .owl-dot
-              = image_tag 'item.jpg', alt: 'ショートコート', height:'75', width: '75'
-          .owl-dots
-            .owl-dot
-              = image_tag 'item.jpg', alt: 'ショートコート', height:'300', width: '300'
-          .owl-dots
-            .owl-dot
-              = image_tag 'item.jpg', alt: 'ショートコート', height:'300', width: '300'
-          .owl-dots
-            .owl-dot
-              = image_tag 'item.jpg', alt: 'ショートコート', height:'300', width: '300'
-          .owl-dots
-            .owl-dot
-              = image_tag 'item.jpg', alt: 'ショートコート', height:'300', width: '300'
-          .owl-dots
-            .owl-dot
-              = image_tag 'item.jpg', alt: 'ショートコート', height:'300', width: '300'
-
+            - if @item.images.present?
+              - @item.images.each do |i|
+                .owl-dot
+                  = image_tag i.image, alt: 'ショートコート', height:'75', width: '75'
       %table.item-table
         %tr
           %th 出品者
