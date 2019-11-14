@@ -10,6 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+ActiveRecord::Schema.define(version: 20191113100413) do
+
+  create_table "brands", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name",       null: false
+    t.integer  "item_id",    null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_brands_on_item_id", using: :btree
+  end
+
+  create_table "buyers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "item_id",    null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_buyers_on_item_id", using: :btree
 ActiveRecord::Schema.define(version: 20191112001939) do
 
   create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -46,10 +61,10 @@ ActiveRecord::Schema.define(version: 20191112001939) do
   end
 
   create_table "images", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "item_id",                 null: false
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
-    t.string   "image",      default: "", null: false
+    t.integer  "item_id",    null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "image"
     t.index ["item_id"], name: "index_images_on_item_id", using: :btree
   end
 
@@ -67,7 +82,6 @@ ActiveRecord::Schema.define(version: 20191112001939) do
     t.integer  "shipping_charge_id"
     t.datetime "created_at",                       null: false
     t.datetime "updated_at",                       null: false
-    t.string   "image"
     t.text     "explanation",        limit: 65535
     t.integer  "buyer_id"
     t.integer  "seller_id"
@@ -83,6 +97,25 @@ ActiveRecord::Schema.define(version: 20191112001939) do
     t.index ["state_id"], name: "index_items_on_state_id", using: :btree
   end
 
+  create_table "likes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "user_id",    null: false
+    t.integer  "item_id",    null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_likes_on_item_id", using: :btree
+    t.index ["user_id"], name: "index_likes_on_user_id", using: :btree
+  end
+
+  create_table "messages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.text     "text",       limit: 65535
+    t.integer  "buyer_id"
+    t.integer  "seller_id"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.index ["buyer_id"], name: "index_messages_on_buyer_id", using: :btree
+    t.index ["seller_id"], name: "index_messages_on_seller_id", using: :btree
+  end
+
   create_table "regions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "prefecture_id"
     t.string   "city"
@@ -90,6 +123,22 @@ ActiveRecord::Schema.define(version: 20191112001939) do
     t.datetime "updated_at",    null: false
   end
 
+  create_table "reports", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "user_id",    null: false
+    t.integer  "item_id",    null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_reports_on_item_id", using: :btree
+    t.index ["user_id"], name: "index_reports_on_user_id", using: :btree
+  end
+
+  create_table "sellers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "item_id",    null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["item_id"], name: "index_sellers_on_item_id", using: :btree
+  end
+  
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",                                null: false
     t.string   "email",                  default: "", null: false
@@ -117,4 +166,11 @@ ActiveRecord::Schema.define(version: 20191112001939) do
   add_foreign_key "addresses", "users"
   add_foreign_key "creditcards", "users"
   add_foreign_key "images", "items"
+  add_foreign_key "likes", "items"
+  add_foreign_key "likes", "users"
+  add_foreign_key "messages", "buyers"
+  add_foreign_key "messages", "sellers"
+  add_foreign_key "reports", "items"
+  add_foreign_key "reports", "users"
+  add_foreign_key "sellers", "items"
 end

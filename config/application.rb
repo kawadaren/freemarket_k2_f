@@ -17,6 +17,6 @@ module FreemarketK2F
       g.test_framework false
 
     end
-
   end
 end
+
