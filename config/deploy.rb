@@ -28,6 +28,8 @@ set :default_env, {
   AWS_SECRET_ACCESS_KEY: ENV["AWS_SECRET_ACCESS_KEY"],
   BASIC_AUTH_USER: ENV["BASIC_AUTH_USER"],
   BASIC_AUTH_PASSWORD: ENV["BASIC_AUTH_PASSWORD"]
+  PAYJP_PRIVATE_KEY: ENV[" PAYJP_PRIVATE_KEY"],
+  PAYJP_KEY: ENV["PAYJP_KEY"]
 }
 # デプロイ処理が終わった後、Unicornを再起動するための記述
 after 'deploy:publishing', 'deploy:restart'
