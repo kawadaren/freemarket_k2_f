@@ -1,4 +1,4 @@
-$(function(){
+$('turbolinks:load',function(){
   var maxNum = 9999999; 
   var minnum = 300
   var fee = 0.1
